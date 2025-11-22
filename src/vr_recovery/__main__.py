@@ -14,7 +14,8 @@ CLI_METADATA = CLIAppConfig(
     name='vr-recovery',
     description='VR Recovery case management interface',
     aliases={},
-    env_requirements={}
+    env_requirements={},
+    framework_min_version="0.2.0",
 )
 
 # Use framework to handle all routing/help/arg parsing

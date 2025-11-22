@@ -5,12 +5,9 @@ VR Recovery Cases List - Core Implementation
 from typing import Any
 
 
-def main(**kwargs: Any) -> dict[str, Any]:
+def main() -> dict[str, Any]:
     """
     List all VR recovery cases.
-
-    Args:
-        **kwargs: Command arguments
 
     Returns:
         dict with results

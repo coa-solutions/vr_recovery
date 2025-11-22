@@ -1,11 +1,12 @@
 {
-  "how_it_works": {
-    "architecture": "All Python CLIs are standalone commands (ops, va, pathlens, etc.) that import cli_framework as a library dependency",
-    "run_commands": "<cli_name> <command> (e.g., ops accounting ledger --period ytd)",
-    "dependencies": "Each CLI has cli_framework in pyproject.toml as editable install from ~/cli_framework",
-    "structure": "CLI repos: src/<name>/__main__.py defines CLI_METADATA, commands in src/<name>/_<namespace>/",
-    "entry_points": "Each CLI: src/<name>/__main__.py calls cli_framework.runtime.run_cli()",
-    "development": "Use 'uv' for package management, all packages installed to shared Python 3.11.11 environment (no venvs)"
+  "dev": {
+    "python": "3.11.11",
+    "manager": "uv",
+    "install": "cd ~/<cli> && uv pip install --python $UV_PROJECT_ENVIRONMENT/bin/python3.11 -e .",
+    "uv_env": "/Users/ariperez/.local/share/uv/python/cpython-3.11.11-macos-aarch64-none",
+    "pattern": "<cli> <command> (e.g., ops accounting ledger --period ytd)",
+    "structure": "src/<name>/__main__.py → CLI_METADATA, commands in src/<name>/_<namespace>/",
+    "framework": "All CLIs import ~/cli_framework as editable dependency (../cli_framework in pyproject.toml)"
   },
   "config": {
     "name": ".claude",
@@ -87,17 +88,5 @@
         }
       ]
     }
-  },
-  "env": {
-    "python_version": "3.11.11",
-    "python_manager": "uv",
-    "package_manager": "uv",
-    "install_mode": "editable",
-    "venv_disabled": true,
-    "cli_stack": ["python", "uv"],
-    "uv_project_environment": "/Users/ariperez/.local/share/uv/python/cpython-3.11.11-macos-aarch64-none",
-    "install_cli": "cd ~/<cli_name> && uv pip install --python $UV_PROJECT_ENVIRONMENT/bin/python3.11 -e .",
-    "pyproject_cli_framework_path": "../cli_framework",
-    "dependency_strategy": "All feature deps are runtime (no optional extras). cli_framework provides core deps (pydantic, aiohttp, etc). Individual CLIs add their specific deps (anthropic, pypdf, google-auth, etc)."
   }
 }
