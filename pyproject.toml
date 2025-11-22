@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-cli_framework = { path = "../../cli_framework", editable = true }
+cli_framework = { path = "../cli_framework", editable = true }
 
 [project.optional-dependencies]
 dev = [
