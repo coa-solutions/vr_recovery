@@ -38,9 +38,15 @@ else
   echo "✓ cli_framework cloned to parent directory"
 fi
 
-# Install CLI (no venv, install to system Python for speed)
-# Install cli_framework first to get shared dependencies
-uv pip install --system --break-system-packages -q -e "$FRAMEWORK_DIR" -e .
+# Install CLI - No venv, install directly to pyenv/system Python
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS: Set UV_PROJECT_ENVIRONMENT to install to pyenv instead of .venv
+    export UV_PROJECT_ENVIRONMENT=/Users/ariperez/.pyenv/versions/3.11.11
+    uv pip install -q -e "$FRAMEWORK_DIR" -e .
+else
+    # Linux/containers: Install to system Python (no venv)
+    uv pip install --system --break-system-packages -q -e "$FRAMEWORK_DIR" -e .
+fi
 echo "✓ vr-recovery installed"
 
 echo "✓ Session start complete"

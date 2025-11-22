@@ -9,15 +9,13 @@ from pathlib import Path
 
 def run_help() -> dict:
     """Run CLI with --help and parse JSON output"""
-    # Run from parent coa directory
     vr_recovery_root = Path(__file__).parent.parent
-    coa_root = vr_recovery_root.parent
 
     result = subprocess.run(
-        [sys.executable, '-m', 'coa', 'vr-recovery', '--help'],
+        [sys.executable, '-m', 'vr_recovery', '--help'],
         capture_output=True,
         text=True,
-        cwd=coa_root
+        cwd=vr_recovery_root
     )
 
     # Filter out warnings/errors, get just the JSON line
@@ -27,16 +25,16 @@ def run_help() -> dict:
 
     # If no JSON found, show error
     if result.returncode != 0:
-        print("Error running: python3 -m coa vr-recovery --help", file=sys.stderr)
+        print("Error running: python3 -m vr_recovery --help", file=sys.stderr)
         print(result.stderr, file=sys.stderr)
 
-    raise RuntimeError("No JSON output from: coa vr-recovery --help")
+    raise RuntimeError("No JSON output from: python3 -m vr_recovery --help")
 
 
 def main():
     vr_recovery_root = Path(__file__).parent.parent
 
-    print("Generating vr-recovery/CLAUDE.md from: python3 -m coa vr-recovery --help")
+    print("Generating vr-recovery/CLAUDE.md from: python3 -m vr_recovery --help")
     vr_recovery_data = run_help()
     (vr_recovery_root / 'CLAUDE.md').write_text(
         json.dumps(vr_recovery_data) + '\n'
