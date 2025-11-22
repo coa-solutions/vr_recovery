@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "vr-recovery-cli"
+name = "vr_recovery_cli"
 version = "0.1.0"
 description = "VR Recovery CLI tool for case management and operations"
 readme = "README.md"
