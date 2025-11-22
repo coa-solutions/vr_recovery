@@ -23,7 +23,6 @@ cli_framework = { path = "../cli_framework", editable = true }
 
 [project.optional-dependencies]
 dev = [
-    "anthropic>=0.73.0",       # Only for maintenance scripts
     "pytest>=7.0.0",
     "black>=23.0.0",
     "ruff>=0.1.0",
