@@ -14,7 +14,12 @@ authors = [
 ]
 # Note: Common deps (pydantic, python-dotenv, aiohttp, python-dateutil,
 # markdown, beautifulsoup4, jinja2, etc.) are provided by cli_framework
-dependencies = []
+dependencies = [
+    "cli_framework",
+]
+
+[tool.uv.sources]
+cli_framework = { path = "../../cli_framework", editable = true }
 
 [project.optional-dependencies]
 dev = [
