@@ -21,13 +21,6 @@ dependencies = [
 [tool.uv.sources]
 cli_framework = { path = "../cli_framework", editable = true }
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "black>=23.0.0",
-    "ruff>=0.1.0",
-]
-
 [project.scripts]
 vr-recovery = "vr_recovery.__main__:main"
 
