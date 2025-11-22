@@ -1,0 +1,45 @@
+# Sensitive data
+.env
+*.key
+*.pem
+credentials.json
+
+# Temporary exports
+_google-export/**/*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Transaction snapshots
+reconciliation-*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+# Generated reports
+accounting/reports/
+
+# Generated documentation output
+_docs/__output__/index.html
+_docs/__output__/.vercel/
+
+# Excel exports
+*.xlsx
+~$*.xlsx

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator - VR Recovery Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <span>← Back to Home</span>
+                </a>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                        <span>❤️</span>
+                    </div>
+                    <span class="text-xl font-bold">VR Recovery</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-green-900 to-blue-900 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Cost Savings Calculator</h1>
+            <p class="text-xl text-blue-100">Calculate your facility's annual savings with VR Recovery Platform</p>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Input Section -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Your Facility's Information</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                How many veterans/service members with SUD does your facility serve annually?
+                            </label>
+                            <input
+                                type="number"
+                                id="numVeterans"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg"
+                                placeholder="e.g., 500"
+                                value="500"
+                                oninput="calculateSavings()"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                What is your current primary treatment modality?
+                            </label>
+                            <select
+                                id="treatmentType"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg"
+                                onchange="calculateSavings()"
+                            >
+                                <option value="residential">Residential Treatment ($10,000-30,000/month)</option>
+                                <option value="outpatient">Outpatient Program ($800-2,000/month)</option>
+                                <option value="mixed" selected>Mixed Approach (Average)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                What percentage of your eligible population currently receives treatment?
+                            </label>
+                            <div class="flex items-center space-x-4">
+                                <input
+                                    type="range"
+                                    id="treatmentRate"
+                                    min="10"
+                                    max="100"
+                                    value="50"
+                                    class="flex-grow"
+                                    oninput="updateRateDisplay(); calculateSavings()"
+                                >
+                                <span id="rateDisplay" class="text-2xl font-bold text-blue-600 w-16">50%</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Industry average: 10-15% for SUD treatment access</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                What is your current annual budget for SUD treatment?
+                            </label>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-2">$</span>
+                                <input
+                                    type="number"
+                                    id="currentBudget"
+                                    class="flex-grow px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-lg"
+                                    placeholder="e.g., 500000"
+                                    value="500000"
+                                    oninput="calculateSavings()"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="results" class="space-y-6 animate-fade-in">
+                    <!-- Annual Savings -->
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">💰 Annual Cost Savings</h3>
+                        <div class="text-6xl font-bold mb-2" id="annualSavings">$0</div>
+                        <p class="text-green-100 text-lg">by switching to VR Recovery Platform</p>
+                    </div>
+
+                    <!-- Detailed Breakdown -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-blue-200">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Current Costs</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Cost per veteran/month:</span>
+                                    <span class="font-bold text-gray-900" id="currentCostPerMonth">$0</span>
+                                </div>
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Veterans served:</span>
+                                    <span class="font-bold text-gray-900" id="currentServed">0</span>
+                                </div>
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Annual cost:</span>
+                                    <span class="font-bold text-red-600 text-xl" id="currentAnnualCost">$0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-green-200">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">With VR Recovery</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Cost per veteran/month:</span>
+                                    <span class="font-bold text-green-600">$35</span>
+                                </div>
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Veterans served:</span>
+                                    <span class="font-bold text-gray-900" id="vrServed">0</span>
+                                </div>
+                                <div class="flex justify-between items-center pb-2 border-b">
+                                    <span class="text-gray-600">Annual cost:</span>
+                                    <span class="font-bold text-green-600 text-xl" id="vrAnnualCost">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact Metrics -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">📊 Additional Impact</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-4xl">👥</span>
+                                </div>
+                                <div class="text-3xl font-bold text-blue-600 mb-2" id="additionalVeterans">0</div>
+                                <p class="text-gray-600">Additional veterans you could serve with the same budget</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-4xl">📉</span>
+                                </div>
+                                <div class="text-3xl font-bold text-green-600 mb-2" id="percentSavings">0%</div>
+                                <p class="text-gray-600">Cost reduction vs. current approach</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-4xl">⏱️</span>
+                                </div>
+                                <div class="text-3xl font-bold text-purple-600 mb-2" id="paybackMonths">0</div>
+                                <p class="text-gray-600">Months to recoup implementation costs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5-Year Projection -->
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">📈 5-Year Cumulative Savings</h3>
+                        <div class="text-5xl font-bold mb-4" id="fiveYearSavings">$0</div>
+                        <p class="text-indigo-100 mb-6">Total savings over 5 years</p>
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                            <p class="text-sm">With these savings, your facility could:</p>
+                            <ul class="mt-2 space-y-1 text-sm">
+                                <li>✓ Expand services to underserved populations</li>
+                                <li>✓ Hire additional clinical staff</li>
+                                <li>✓ Invest in complementary treatment programs</li>
+                                <li>✓ Improve facilities and patient experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Chart -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">📊 Cost Comparison</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Residential Treatment</span>
+                                    <span class="text-red-600 font-bold">$10,000-30,000/month</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-red-500 h-8 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Outpatient Program</span>
+                                    <span class="text-orange-600 font-bold">$800-2,000/month</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-orange-500 h-8 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Teletherapy Apps</span>
+                                    <span class="text-yellow-600 font-bold">$100-300/month</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-yellow-500 h-8 rounded-full" style="width: 5%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">VR Recovery Platform</span>
+                                    <span class="text-green-600 font-bold">$20-50/month</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-green-500 h-8 rounded-full" style="width: 3%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assumptions -->
+                    <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
+                        <h4 class="font-bold text-blue-900 mb-3">📋 Calculation Assumptions</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• VR Recovery Platform pricing: $35/active user/month (mid-range)</li>
+                            <li>• Residential treatment: $20,000/month average (30-90 day program)</li>
+                            <li>• Outpatient treatment: $1,400/month average</li>
+                            <li>• Mixed approach: 70% outpatient, 20% residential, 10% other</li>
+                            <li>• Active user = completed at least 1 session per month</li>
+                            <li>• Calculations assume same number of veterans served</li>
+                            <li>• Additional veterans calculation uses freed-up budget</li>
+                            <li>• Does not include secondary savings (reduced ER visits, improved employment, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white text-center mt-8">
+                    <h3 class="text-3xl font-bold mb-4">Ready to Explore Partnership?</h3>
+                    <p class="text-xl text-blue-100 mb-6">
+                        Let's discuss how VR Recovery Platform can work for your facility
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:contact@avoneauxmed.org?subject=Cost Calculator Results - Partnership Inquiry"
+                           class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition">
+                            Email Us Your Results
+                        </a>
+                        <a href="index.html#contact"
+                           class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition border-2 border-white/20">
+                            View Contact Info
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
+        <p>&copy; 2025 Avoneaux Medical Institute / DCPV360. All rights reserved.</p>
+        <p class="mt-2"><a href="index.html" class="hover:text-white">Back to Home</a></p>
+    </footer>
+
+    <script>
+        function updateRateDisplay() {
+            const rate = document.getElementById('treatmentRate').value;
+            document.getElementById('rateDisplay').textContent = rate + '%';
+        }
+
+        function calculateSavings() {
+            const numVeterans = parseInt(document.getElementById('numVeterans').value) || 0;
+            const treatmentType = document.getElementById('treatmentType').value;
+            const treatmentRate = parseInt(document.getElementById('treatmentRate').value) || 50;
+            const currentBudget = parseInt(document.getElementById('currentBudget').value) || 0;
+
+            // Calculate number actually served
+            const veteransServed = Math.round(numVeterans * (treatmentRate / 100));
+
+            // Current cost per month based on treatment type
+            let currentCostPerMonth = 0;
+            switch(treatmentType) {
+                case 'residential':
+                    currentCostPerMonth = 20000; // Average of $10K-30K
+                    break;
+                case 'outpatient':
+                    currentCostPerMonth = 1400; // Average of $800-2K
+                    break;
+                case 'mixed':
+                    currentCostPerMonth = 5000; // Weighted average
+                    break;
+            }
+
+            // VR Recovery cost
+            const vrCostPerMonth = 35;
+
+            // Annual costs
+            const currentAnnualCost = veteransServed * currentCostPerMonth * 12;
+            const vrAnnualCost = veteransServed * vrCostPerMonth * 12;
+
+            // Savings
+            const annualSavings = currentAnnualCost - vrAnnualCost;
+            const fiveYearSavings = annualSavings * 5;
+
+            // Additional veterans that could be served with same budget
+            const additionalVeterans = Math.floor(annualSavings / (vrCostPerMonth * 12));
+
+            // Percent savings
+            const percentSavings = ((annualSavings / currentAnnualCost) * 100).toFixed(1);
+
+            // Payback period (assuming $50K implementation cost)
+            const implementationCost = 50000;
+            const paybackMonths = Math.ceil(implementationCost / (annualSavings / 12));
+
+            // Update display
+            document.getElementById('currentCostPerMonth').textContent = '$' + currentCostPerMonth.toLocaleString();
+            document.getElementById('currentServed').textContent = veteransServed.toLocaleString();
+            document.getElementById('currentAnnualCost').textContent = '$' + currentAnnualCost.toLocaleString();
+
+            document.getElementById('vrServed').textContent = veteransServed.toLocaleString();
+            document.getElementById('vrAnnualCost').textContent = '$' + vrAnnualCost.toLocaleString();
+
+            document.getElementById('annualSavings').textContent = '$' + annualSavings.toLocaleString();
+            document.getElementById('fiveYearSavings').textContent = '$' + fiveYearSavings.toLocaleString();
+            document.getElementById('additionalVeterans').textContent = additionalVeterans.toLocaleString();
+            document.getElementById('percentSavings').textContent = percentSavings + '%';
+            document.getElementById('paybackMonths').textContent = paybackMonths;
+        }
+
+        // Calculate on page load
+        window.onload = function() {
+            updateRateDisplay();
+            calculateSavings();
+        };
+    </script>
+</body>
+</html>

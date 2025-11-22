@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - VR Recovery Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .faq-item { transition: all 0.3s ease; }
+        .faq-item:hover { transform: translateX(8px); }
+        .answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .answer.open { max-height: 1000px; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <span>← Back to Home</span>
+                </a>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                        <span>❤️</span>
+                    </div>
+                    <span class="text-xl font-bold">VR Recovery</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p class="text-xl text-blue-100">Addressing your questions about the VR Recovery Platform</p>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="py-8 bg-white border-b">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <a href="#technical" class="px-4 py-2 bg-blue-100 text-blue-900 rounded-lg hover:bg-blue-200 transition">Technical</a>
+                <a href="#clinical" class="px-4 py-2 bg-green-100 text-green-900 rounded-lg hover:bg-green-200 transition">Clinical</a>
+                <a href="#security" class="px-4 py-2 bg-purple-100 text-purple-900 rounded-lg hover:bg-purple-200 transition">Security</a>
+                <a href="#partnership" class="px-4 py-2 bg-orange-100 text-orange-900 rounded-lg hover:bg-orange-200 transition">Partnership</a>
+                <a href="#implementation" class="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-lg hover:bg-indigo-200 transition">Implementation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto space-y-12">
+
+                <!-- TECHNICAL QUESTIONS -->
+                <div id="technical">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">💻 Technical Questions</h2>
+                    <div class="space-y-4">
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-blue-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">How is this different from teletherapy apps?</h3>
+                                    <span class="text-2xl text-blue-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Key Differences:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Hybrid Model:</strong> We combine VR education + live peer support. Most teletherapy apps are 1-on-1 only.</li>
+                                    <li><strong>• Military Cultural Competence:</strong> All content is by/for veterans and service members. Generic teletherapy apps aren't military-specific.</li>
+                                    <li><strong>• Integration Philosophy:</strong> We integrate medical science + psychology + peer recovery. Most apps focus on only one approach.</li>
+                                    <li><strong>• Group Experience:</strong> Veterans can join virtual peer groups, not just individual therapy sessions.</li>
+                                    <li><strong>• Cost:</strong> $20-50/month vs. $100-300/month for teletherapy.</li>
+                                    <li><strong>• Accessibility:</strong> Works on any device, including basic smartphones. No expensive VR headset required.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-blue-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">Why not just use Meta Quest or other consumer VR platforms?</h3>
+                                    <span class="text-2xl text-blue-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Critical Reasons We Don't Use Meta Quest:</strong></p>
+                                <div class="bg-red-50 border-2 border-red-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-red-900 mb-2">❌ DATA PRIVACY CONCERNS</p>
+                                    <p>Meta's business model depends on harvesting user data for advertising. This is <strong>incompatible with HIPAA and federal health information protection requirements.</strong></p>
+                                </div>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Federal Compliance:</strong> Meta Quest does not meet VA/DOD security requirements (FISMA, FedRAMP).</li>
+                                    <li><strong>• Vendor Lock-in:</strong> Dependence on a single commercial platform with changing terms and pricing.</li>
+                                    <li><strong>• Hardware Cost:</strong> Meta Quest requires $300-500 upfront investment—a barrier for many veterans.</li>
+                                    <li><strong>• Platform Control:</strong> Meta could change policies, shut down features, or discontinue products.</li>
+                                </ul>
+                                <div class="bg-green-50 border-2 border-green-300 rounded-lg p-4 mt-4">
+                                    <p class="font-bold text-green-900 mb-2">✅ OUR APPROACH: Platform-Agnostic WebXR</p>
+                                    <p>We use open web standards (WebXR) that work on ANY device: smartphones, tablets, computers, OR VR headsets. No proprietary platform dependency. Government-grade security from day one.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-blue-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">What if veterans aren't tech-savvy enough to use VR?</h3>
+                                    <span class="text-2xl text-blue-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>We've designed for accessibility:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Works on Smartphones:</strong> Most veterans already use smartphones—no new device learning curve.</li>
+                                    <li><strong>• Simple Interface:</strong> Designed for ease of use, not tech experts.</li>
+                                    <li><strong>• Phone Support:</strong> Help desk available for technical assistance.</li>
+                                    <li><strong>• Family Assistance:</strong> Spouses/children can help with initial setup.</li>
+                                    <li><strong>• Peer Specialist Training:</strong> Veteran peer specialists can walk users through the platform.</li>
+                                    <li><strong>• Multiple Modes:</strong> Can use standard video mode if VR is too complex.</li>
+                                </ul>
+                                <p class="mt-3 font-semibold">Reality: During COVID, millions of older veterans successfully joined virtual recovery meetings online. If they can use Zoom, they can use our platform.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-blue-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">Can this work in deployed/austere environments (ships, remote bases)?</h3>
+                                    <span class="text-2xl text-blue-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Yes! We've specifically designed for military operational environments:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Low-Bandwidth Mode:</strong> Works with limited internet connectivity.</li>
+                                    <li><strong>• Offline Capability:</strong> Some content can be downloaded for offline viewing.</li>
+                                    <li><strong>• Mobile-First:</strong> Works on smartphones in any location.</li>
+                                    <li><strong>• Tested for Harsh Conditions:</strong> Platform designed to function in non-ideal network environments.</li>
+                                </ul>
+                                <p class="mt-3"><strong>Example Use Cases:</strong></p>
+                                <ul class="space-y-2 ml-4 mt-2">
+                                    <li>• Sailor on submarine deployment accessing educational modules during limited internet availability</li>
+                                    <li>• Soldier at remote FOB joining peer support group via smartphone</li>
+                                    <li>• Service member on ship at sea using offline content library</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CLINICAL QUESTIONS -->
+                <div id="clinical">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">🏥 Clinical & Safety Questions</h2>
+                    <div class="space-y-4">
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-green-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">Won't VR trigger PTSD symptoms or flashbacks in veterans?</h3>
+                                    <span class="text-2xl text-green-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>This is THE most important question, and we take it extremely seriously.</strong></p>
+                                <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-yellow-900 mb-2">⚠️ TRAUMA-INFORMED DESIGN IS FOUNDATIONAL</p>
+                                    <p>We're developing this platform <strong>in partnership with the VA National Center for PTSD</strong>—the world's leading experts on military trauma.</p>
+                                </div>
+                                <p class="mb-3"><strong>Safety Protocols:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>1. Mandatory Pre-Screening:</strong> PCL-5 (PTSD Checklist) + TBI questionnaire before ANY VR use.</li>
+                                    <li><strong>2. Personalized Recommendations:</strong> Based on screening, users receive tailored guidance (VR safe vs. non-VR alternatives).</li>
+                                    <li><strong>3. Non-VR Alternatives:</strong> ALL content available in standard video format—VR is optional, not required.</li>
+                                    <li><strong>4. Instant Escape Mechanisms:</strong> One-button exit from any immersive experience.</li>
+                                    <li><strong>5. Adjustable Intensity:</strong> Users control level of immersion (fully immersive → partial → standard video).</li>
+                                    <li><strong>6. Grounding Techniques:</strong> Built into sessions (breathing exercises, reality checks).</li>
+                                    <li><strong>7. Real-Time Monitoring:</strong> System prompts check-ins ("How are you feeling right now?").</li>
+                                    <li><strong>8. Automated Referrals:</strong> If concerning symptoms detected, immediate connection to VA crisis resources.</li>
+                                    <li><strong>9. Crisis Access:</strong> Veterans Crisis Line (988 then 1) prominently displayed.</li>
+                                </ul>
+                                <div class="bg-green-50 border-2 border-green-300 rounded-lg p-4 mt-4">
+                                    <p class="font-bold text-green-900 mb-2">✅ ZERO TOLERANCE POLICY</p>
+                                    <p>Any reported trauma trigger incident will result in immediate platform review and protocol adjustments. Safety comes first, always.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-green-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">What's the clinical evidence that VR actually works for addiction treatment?</h3>
+                                    <span class="text-2xl text-green-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Current Evidence Base:</strong></p>
+                                <ul class="space-y-2 ml-4 mb-4">
+                                    <li><strong>• VR for PTSD:</strong> VA already uses VR exposure therapy for PTSD—proven effective in multiple RCTs.</li>
+                                    <li><strong>• Medical VR Applications:</strong> VR used successfully for pain management, surgical training, phobia treatment.</li>
+                                    <li><strong>• Immersive Learning:</strong> Research shows VR increases engagement, retention, and skill-building vs. traditional methods.</li>
+                                    <li><strong>• Early SUD Studies:</strong> Preliminary research on VR for addiction shows promise in cue exposure therapy, craving management.</li>
+                                </ul>
+                                <p class="mb-3"><strong>Our Evidence Generation Plan:</strong></p>
+                                <div class="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
+                                    <p class="font-bold text-blue-900 mb-2">We're NOT asking you to adopt unproven technology.</p>
+                                    <p class="mb-3">Our 3-phase validation pathway:</p>
+                                    <ul class="space-y-2 ml-4">
+                                        <li><strong>Phase I (Months 0-8):</strong> Feasibility & acceptability testing. Deliverable: Usability data.</li>
+                                        <li><strong>Phase II (Months 12-36):</strong> Randomized controlled trial at 3-5 VA/DOD sites (n=150-200). Deliverable: Published efficacy study.</li>
+                                        <li><strong>Phase III (Months 36-72):</strong> Multi-site effectiveness trial. Deliverable: Real-world outcomes data + cost-effectiveness analysis.</li>
+                                    </ul>
+                                </div>
+                                <p class="mt-3 font-semibold">Bottom Line: We will generate rigorous clinical evidence before asking for national adoption. Transparent publication in peer-reviewed journals.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-green-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">Does this replace existing VA/DOD treatment programs?</h3>
+                                    <span class="text-2xl text-green-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>NO. This supplements, not replaces.</strong></p>
+                                <div class="bg-green-50 border-2 border-green-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-green-900 mb-2">✅ INTEGRATION, NOT REPLACEMENT</p>
+                                    <p>Our platform is designed to work <strong>alongside</strong> existing VA peer support services, telehealth programs, and outpatient care.</p>
+                                </div>
+                                <p class="mb-3"><strong>How It Complements Existing Programs:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Extends Reach:</strong> Serves populations current programs can't reach (rural, deployed, stigmatized).</li>
+                                    <li><strong>• Fills Gaps:</strong> Provides 24/7 access between scheduled appointments.</li>
+                                    <li><strong>• Enhances Engagement:</strong> Keeps veterans connected to care between in-person sessions.</li>
+                                    <li><strong>• Reduces No-Shows:</strong> Eliminates transportation barriers that cause missed appointments.</li>
+                                    <li><strong>• Supports Transitions:</strong> Bridges care from active duty → veteran → civilian recovery communities.</li>
+                                </ul>
+                                <p class="mt-3"><strong>Example Integration:</strong> Veteran attends weekly VA outpatient group therapy (in-person) + uses VR Recovery Platform for daily peer support check-ins and educational modules between sessions.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SECURITY & PRIVACY -->
+                <div id="security">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">🔒 Security & Privacy Questions</h2>
+                    <div class="space-y-4">
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-purple-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">How do you protect veteran health information (PHI)?</h3>
+                                    <span class="text-2xl text-purple-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>We build for federal compliance from day one:</strong></p>
+                                <div class="bg-purple-50 border-2 border-purple-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-purple-900 mb-2">🔐 GOVERNMENT-GRADE SECURITY</p>
+                                    <p>Our infrastructure meets or exceeds all federal health data protection requirements.</p>
+                                </div>
+                                <p class="mb-3"><strong>Compliance Standards:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• HIPAA:</strong> Full compliance with Health Insurance Portability and Accountability Act.</li>
+                                    <li><strong>• FISMA:</strong> Federal Information Security Management Act requirements.</li>
+                                    <li><strong>• FedRAMP Moderate:</strong> Cloud infrastructure certified to FedRAMP standards.</li>
+                                    <li><strong>• Section 508:</strong> Accessibility compliance for users with disabilities.</li>
+                                </ul>
+                                <p class="mb-3 mt-4"><strong>Technical Security Measures:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• End-to-End Encryption:</strong> All data encrypted in transit and at rest.</li>
+                                    <li><strong>• CAC/PIV Authentication:</strong> Compatible with military Common Access Card systems.</li>
+                                    <li><strong>• VA OAuth Integration:</strong> Secure authentication through VA systems.</li>
+                                    <li><strong>• Audit Trails:</strong> Complete logging of all access and activities.</li>
+                                    <li><strong>• Data Isolation:</strong> Each agency's data completely segregated.</li>
+                                    <li><strong>• Regular Security Audits:</strong> Third-party penetration testing and vulnerability assessments.</li>
+                                </ul>
+                                <p class="mt-4 font-semibold">Critical: VA/DOD retains full ownership and control of all patient data. We never sell, share, or use data for advertising.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-purple-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">Will using this platform affect a service member's security clearance?</h3>
+                                    <span class="text-2xl text-purple-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Designed FOR clearance holders:</strong></p>
+                                <div class="bg-green-50 border-2 border-green-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-green-900 mb-2">✅ CLEARANCE-SAFE DESIGN</p>
+                                    <p>Platform designed specifically to allow service members with security clearances to seek help privately.</p>
+                                </div>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Private Access:</strong> Anonymous usage option available—no record of platform use visible to command unless self-disclosed.</li>
+                                    <li><strong>• DOD-Approved Infrastructure:</strong> Meets security requirements for cleared personnel.</li>
+                                    <li><strong>• No Third-Party Data Sharing:</strong> Information never leaves government-approved systems.</li>
+                                    <li><strong>• Early Intervention:</strong> Seeking help <em>before</em> problems escalate actually <em>protects</em> clearances (vs. waiting until incident occurs).</li>
+                                </ul>
+                                <p class="mt-3"><strong>Note:</strong> Seeking treatment for SUD is generally NOT clearance-disqualifying—hiding problems and letting them escalate IS. Our platform encourages early help-seeking.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARTNERSHIP QUESTIONS -->
+                <div id="partnership">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">🤝 Partnership Questions</h2>
+                    <div class="space-y-4">
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-orange-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">What does "partnership" actually mean? Are you trying to sell to us?</h3>
+                                    <span class="text-2xl text-orange-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>We're NOT doing traditional "sales." We're seeking CO-DEVELOPMENT partners.</strong></p>
+                                <div class="bg-orange-50 border-2 border-orange-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-orange-900 mb-2">🤝 PARTNERSHIP MODEL</p>
+                                    <p>We don't show up with a finished product and say "buy this." We work WITH VA/DOD to build the right solution.</p>
+                                </div>
+                                <p class="mb-3"><strong>What Partnership Looks Like:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Co-Design:</strong> Your clinicians and veterans help shape platform features.</li>
+                                    <li><strong>• Pilot Testing:</strong> We test at your facility, gather feedback, iterate based on your input.</li>
+                                    <li><strong>• Data Ownership:</strong> You retain full ownership of all patient data.</li>
+                                    <li><strong>• Integration:</strong> We integrate with YOUR existing systems (EHR, telehealth, peer support programs).</li>
+                                    <li><strong>• Evidence Generation:</strong> We conduct rigorous research at your sites, publish results transparently.</li>
+                                    <li><strong>• Continuous Improvement:</strong> Ongoing feedback loops ensure platform evolves based on real-world use.</li>
+                                </ul>
+                                <p class="mt-3 font-semibold">You're not buying a product—you're partnering to build a solution that actually works for YOUR veterans/service members.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-orange-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">What do you need from us as partners?</h3>
+                                    <span class="text-2xl text-orange-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Immediate (Next 30-60 Days):</strong></p>
+                                <ul class="space-y-2 ml-4 mb-4">
+                                    <li><strong>• Letter of Support:</strong> For our SBIR Phase I application (strengthens our funding case).</li>
+                                    <li><strong>• Introductions:</strong> To key stakeholders (VA Office of Connected Care, VA National Center for PTSD, Defense Health Agency).</li>
+                                    <li><strong>• Feedback:</strong> On platform design, content priorities, integration requirements.</li>
+                                </ul>
+                                <p class="mb-3"><strong>Near-Term (90-180 Days):</strong></p>
+                                <ul class="space-y-2 ml-4 mb-4">
+                                    <li><strong>• Pilot Site Commitment:</strong> Agreement to test platform with 50-100 veterans at your facility.</li>
+                                    <li><strong>• Advisory Board Participation:</strong> 1-2 clinicians from your site to guide development.</li>
+                                    <li><strong>• IRB Collaboration:</strong> Help navigating institutional review board processes for research.</li>
+                                </ul>
+                                <p class="mb-3"><strong>Long-Term (1-3 Years):</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• Research Collaboration:</strong> Co-authorship on publications from pilot studies.</li>
+                                    <li><strong>• Implementation Feedback:</strong> Ongoing input as we refine the platform.</li>
+                                    <li><strong>• Champion Internally:</strong> Help us connect with other VA/DOD sites as we scale.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-orange-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">How much does this cost?</h3>
+                                    <span class="text-2xl text-orange-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Pricing Model:</strong></p>
+                                <div class="bg-green-50 border-2 border-green-300 rounded-lg p-4 mb-4">
+                                    <p class="font-bold text-green-900 mb-2">💰 COST-EFFECTIVE PRICING</p>
+                                    <p class="text-2xl font-bold text-green-900 mb-1">$20-50 per active user per month</p>
+                                    <p class="text-sm">vs. $10,000-30,000/month residential treatment<br>vs. $800-2,000/month outpatient treatment</p>
+                                </div>
+                                <p class="mb-3"><strong>What "Active User" Means:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li>• You only pay for veterans/service members who actually USE the platform (not just enrolled).</li>
+                                    <li>• "Active" = completed at least 1 session in the month.</li>
+                                </ul>
+                                <p class="mb-3 mt-4"><strong>Pilot Pricing:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li>• <strong>Phase I-II Pilots:</strong> Typically FREE or heavily discounted as part of research collaboration.</li>
+                                    <li>• We're seeking evidence generation, not revenue, in early phases.</li>
+                                </ul>
+                                <p class="mt-3"><strong>Want to calculate your facility's ROI?</strong> <a href="cost-calculator.html" class="text-blue-600 hover:underline font-semibold">Use our Cost Calculator →</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- IMPLEMENTATION QUESTIONS -->
+                <div id="implementation">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">⚙️ Implementation Questions</h2>
+                    <div class="space-y-4">
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-indigo-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">How long until we can deploy this at our facility?</h3>
+                                    <span class="text-2xl text-indigo-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Realistic Timeline:</strong></p>
+                                <div class="space-y-4">
+                                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4">
+                                        <p class="font-bold text-blue-900 mb-1">Months 0-8: Platform Development (Phase I)</p>
+                                        <p class="text-sm text-gray-700">Create 2 VR educational modules; internal testing; usability validation.</p>
+                                    </div>
+                                    <div class="bg-green-50 border-l-4 border-green-600 p-4">
+                                        <p class="font-bold text-green-900 mb-1">Months 6-12: Pilot Site Recruitment</p>
+                                        <p class="text-sm text-gray-700">Secure partnerships with 3-5 VA medical centers or MTFs; IRB approvals; staff training.</p>
+                                    </div>
+                                    <div class="bg-purple-50 border-l-4 border-purple-600 p-4">
+                                        <p class="font-bold text-purple-900 mb-1">Months 12-24: Pilot Deployment</p>
+                                        <p class="text-sm text-gray-700">Launch at partner sites; enroll 150-200 veterans; collect outcomes data.</p>
+                                    </div>
+                                    <div class="bg-orange-50 border-l-4 border-orange-600 p-4">
+                                        <p class="font-bold text-orange-900 mb-1">Months 24-36: Evidence Publication & Refinement</p>
+                                        <p class="text-sm text-gray-700">Analyze data; publish results; refine platform based on feedback.</p>
+                                    </div>
+                                    <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4">
+                                        <p class="font-bold text-indigo-900 mb-1">Months 36+: National Rollout</p>
+                                        <p class="text-sm text-gray-700">Expand to additional sites; VA/DOD enterprise contracts; widespread adoption.</p>
+                                    </div>
+                                </div>
+                                <p class="mt-4 font-semibold">If you want to be a pilot site: Join us NOW in months 6-12 to be among the first to test and shape the platform.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl p-6 shadow-lg border-2 border-indigo-200">
+                            <button onclick="toggleAnswer(this)" class="w-full text-left">
+                                <div class="flex items-start justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 pr-4">How does this integrate with our existing EHR/health IT systems?</h3>
+                                    <span class="text-2xl text-indigo-600 flex-shrink-0">+</span>
+                                </div>
+                            </button>
+                            <div class="answer mt-4 text-gray-700">
+                                <p class="mb-3"><strong>Integration Capabilities:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li><strong>• VA VistA:</strong> Can interface with VA's electronic health record system.</li>
+                                    <li><strong>• MHS GENESIS:</strong> Compatible with DOD's military health system EHR.</li>
+                                    <li><strong>• FHIR Standard:</strong> Uses Fast Healthcare Interoperability Resources for data exchange.</li>
+                                    <li><strong>• OAuth 2.0:</strong> Secure authentication integration.</li>
+                                    <li><strong>• HL7 Messaging:</strong> Standard health data exchange protocols.</li>
+                                </ul>
+                                <p class="mt-3 mb-3"><strong>What We Can Exchange:</strong></p>
+                                <ul class="space-y-2 ml-4">
+                                    <li>• Session attendance logs (for provider visibility)</li>
+                                    <li>• Progress notes (summary of participation)</li>
+                                    <li>• Referrals (platform can trigger alerts to clinical team)</li>
+                                    <li>• Outcomes data (anonymized for research)</li>
+                                </ul>
+                                <p class="mt-3 font-semibold">Note: All integrations designed to YOUR specifications during pilot phase. We adapt to your systems, not vice versa.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Still Have Questions?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                We're here to answer them. Let's schedule a conversation to discuss your specific needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contact@avoneauxmed.org" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition">
+                    Email Us
+                </a>
+                <a href="index.html#contact" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition border-2 border-white/20">
+                    View Contact Info
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
+        <p>&copy; 2025 Avoneaux Medical Institute / DCPV360. All rights reserved.</p>
+        <p class="mt-2"><a href="index.html" class="hover:text-white">Back to Home</a></p>
+    </footer>
+
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span');
+
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('open');
+                icon.textContent = '−';
+            }
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

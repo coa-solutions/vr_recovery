@@ -1,0 +1,46 @@
+🌐 VR RECOVERY PLATFORM - STANDALONE WEBSITE
+============================================
+
+📂 HOW TO VIEW:
+--------------
+1. Open your file browser
+2. Navigate to: /home/user/pathlens/standalone-website/
+3. Double-click any .html file to open in your browser
+
+✅ COMPLETED PAGES (All Ready to View!):
+-----------------------------------------
+1. ⭐ README.html - Website guide and instructions (START HERE!)
+2. 🏠 index.html - Main homepage with full navigation
+3. ❤️  founder-story.html - Personal recovery stories (MOST POWERFUL!)
+4. ❓ faq.html - Comprehensive FAQ (addresses all objections)
+5. 💰 cost-calculator.html - Interactive ROI calculator
+
+🚀 RECOMMENDED VIEWING ORDER:
+-----------------------------
+1. README.html - Overview of what's available
+2. index.html - Main homepage
+3. founder-story.html - Emotional connection
+4. cost-calculator.html - Show the ROI
+5. faq.html - Answer technical questions
+
+📧 CONTACT:
+-----------
+Email: contact@avoneauxmed.org
+Web: www.avoneauxmed.org
+
+🎯 KEY MESSAGES:
+----------------
+✓ Platform-agnostic (NOT Meta Quest)
+✓ Privacy-first (government-grade security)
+✓ Trauma-informed (VA PTSD Center partnership)
+✓ 95% cost reduction vs. traditional treatment
+✓ 76 years combined recovery experience (founders)
+
+💡 FOR SHARING:
+---------------
+- Email these HTML files as attachments
+- Host on web server for live URLs
+- Copy to USB drive for in-person presentations
+
+All pages are self-contained and work offline!
+No server or installation required.
