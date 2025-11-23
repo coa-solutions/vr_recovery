@@ -6,8 +6,8 @@
     "uv_env": "/Users/ariperez/.local/share/uv/python/cpython-3.11.11-macos-aarch64-none",
     "pattern": "<cli> <command> (e.g., ops accounting ledger --period ytd)",
     "structure": "src/<name>/__main__.py \u2192 CLI_METADATA, commands in src/<name>/_<namespace>/",
-    "framework": "All CLIs import ~/cli_framework as editable dependency (../cli_framework in pyproject.toml)"
-    "notes": ['be a good maintainer, if something is clearly broke, fix it]
+    "framework": "All CLIs import ~/cli_framework as editable dependency (../cli_framework in pyproject.toml)",
+    "notes": "be a good maintainer, if something is clearly broke, fix it"
   },
   "docs": {
     "index": "~/docs/DOCS.json",
@@ -17,6 +17,8 @@
       "mercury": "api/mercury",
       "oracle-fhir": "api/oracle-fhir",
       "google-slides": "api/google-slides",
+      "va-lighthouse": "api/va-lighthouse",
+      "anthropic": "api/anthropic",
       "vercel": "infra/vercel",
       "github": "infra/github",
       "uv": "python/uv",
