@@ -2,24 +2,38 @@
 VR Recovery Cases List - Core Implementation
 """
 
-from typing import Any
+from pydantic import BaseModel
 
 
-def main() -> dict[str, Any]:
+class CaseInfo(BaseModel):
+    """Individual case information"""
+    id: str
+    status: str
+    client: str
+
+
+class CasesListResult(BaseModel):
+    """Result model for cases list command"""
+    success: bool
+    data: list[CaseInfo]
+    count: int
+
+
+def main() -> CasesListResult:
     """
     List all VR recovery cases.
 
     Returns:
-        dict with results
+        CasesListResult with case information
     """
     # Example implementation - replace with actual logic
     cases = [
-        {"id": "VR-001", "status": "active", "client": "Sample Client 1"},
-        {"id": "VR-002", "status": "pending", "client": "Sample Client 2"},
+        CaseInfo(id="VR-001", status="active", client="Sample Client 1"),
+        CaseInfo(id="VR-002", status="pending", client="Sample Client 2"),
     ]
 
-    return {
-        "success": True,
-        "data": cases,
-        "count": len(cases)
-    }
+    return CasesListResult(
+        success=True,
+        data=cases,
+        count=len(cases)
+    )
