@@ -24,5 +24,5 @@ if [ -z "$GH_TOKEN" ]; then
   exit 0
 fi
 
-# Clone cli_framework
-git clone "https://${GH_TOKEN}@github.com/coa-solutions/cli_framework.git" "$HOME/cli_framework"
+# Clone cli_framework (suppress stderr on success)
+git clone "https://${GH_TOKEN}@github.com/coa-solutions/cli_framework.git" "$HOME/cli_framework" 2>/dev/null
