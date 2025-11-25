@@ -6,7 +6,6 @@ VR Recovery case management CLI configuration using CLI_METADATA pattern.
 All logic is in cli_framework - this is just configuration.
 """
 
-from pathlib import Path
 from cli_framework.config import CLIAppConfig
 
 # CLI_METADATA: Configuration (not code!)
@@ -24,7 +23,7 @@ from cli_framework.runtime.app import run_cli
 
 def main():
     """Entry point for setuptools console_scripts."""
-    run_cli(CLI_METADATA, repo_root=Path(__file__).parent)
+    run_cli(CLI_METADATA)
 
 
 if __name__ == '__main__':

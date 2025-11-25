@@ -1,1 +1,0 @@
-{"cmd": "vr-recovery", "desc": "VR Recovery case management interface", "commands": ["cases list"]}
