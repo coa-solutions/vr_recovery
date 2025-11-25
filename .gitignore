@@ -44,3 +44,6 @@ _docs/__output__/.vercel/
 # Excel exports
 *.xlsx
 ~$*.xlsx
+
+# Claude Code local settings
+.claude/settings.local.json
