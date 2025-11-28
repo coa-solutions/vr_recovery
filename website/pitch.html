@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Deck - VR Recovery Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wp-navy': '#002147',
+                        'wp-gold': '#C09A54',
+                        'va-blue': '#003366',
+                        'glory-red': '#BF0A30',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+        body { font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Libre Baskerville', serif; }
+        html { scroll-behavior: smooth; }
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .stars-bg {
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, white, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, white, transparent),
+                radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 160px 120px, white, transparent);
+            background-size: 200px 200px;
+        }
+        .flag-stripe {
+            background: repeating-linear-gradient(
+                0deg,
+                #bf0a30 0px,
+                #bf0a30 30px,
+                #ffffff 30px,
+                #ffffff 60px
+            );
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+        .animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
+        .stat-box:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .stat-box { transition: all 0.3s ease; }
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="bg-wp-navy text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed right-4 top-1/2 -translate-y-1/2 z-50 space-y-2 hidden lg:block">
+        <a href="#slide-1" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Title"></a>
+        <a href="#slide-2" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Team"></a>
+        <a href="#slide-3" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Crisis"></a>
+        <a href="#slide-4" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Access Problem"></a>
+        <a href="#slide-5" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Current Solutions"></a>
+        <a href="#slide-6" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Our Solution"></a>
+        <a href="#slide-7" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Why VR"></a>
+        <a href="#slide-8" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Security"></a>
+        <a href="#slide-9" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Experience"></a>
+        <a href="#slide-10" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Content"></a>
+        <a href="#slide-11" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Military Culture"></a>
+        <a href="#slide-12" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Trauma-Informed"></a>
+        <a href="#slide-13" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Hybrid Model"></a>
+        <a href="#slide-14" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Populations"></a>
+        <a href="#slide-15" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Active Duty"></a>
+        <a href="#slide-16" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Veteran"></a>
+        <a href="#slide-17" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Market"></a>
+        <a href="#slide-18" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Business Model"></a>
+        <a href="#slide-19" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Competitive"></a>
+        <a href="#slide-20" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Evidence"></a>
+        <a href="#slide-21" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Partnership"></a>
+        <a href="#slide-22" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Funding"></a>
+        <a href="#slide-23" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Risks"></a>
+        <a href="#slide-24" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Timeline"></a>
+        <a href="#slide-25" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Vision"></a>
+        <a href="#slide-26" class="nav-dot block w-3 h-3 rounded-full bg-wp-gold/30 hover:bg-wp-gold transition" title="Call to Action"></a>
+    </nav>
+
+    <!-- Back to Home -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 bg-wp-gold/20 hover:bg-wp-gold/40 border border-wp-gold/50 px-4 py-2 rounded transition flex items-center space-x-2 text-sm font-semibold">
+        <span>&larr;</span>
+        <span>Back to Home</span>
+    </a>
+
+    <!-- SLIDE 1: TITLE -->
+    <section id="slide-1" class="slide bg-wp-navy stars-bg overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-glory-red to-glory-red/70"></div>
+        </div>
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-glory-red/20 to-transparent"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center space-x-4 mb-8">
+                <div class="w-8 h-px bg-wp-gold"></div>
+                <span class="text-wp-gold text-sm font-semibold tracking-[0.3em]">FOR MILITARY & VETERANS</span>
+                <div class="w-8 h-px bg-wp-gold"></div>
+            </div>
+
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+                <span class="text-wp-gold">VR</span> Recovery Platform
+            </h1>
+
+            <p class="text-2xl md:text-3xl text-stone-300 mb-4 font-light">
+                Evidence-Based Addiction Treatment for Those Who Served
+            </p>
+
+            <p class="text-xl text-stone-400 mb-12 max-w-2xl mx-auto italic">
+                "Bringing care to service members & veterans—not the other way around"
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <span class="bg-wp-gold text-wp-navy px-4 py-2 rounded font-semibold">Accessible</span>
+                <span class="bg-white/10 border border-wp-gold/50 px-4 py-2 rounded font-semibold">Secure</span>
+                <span class="bg-glory-red px-4 py-2 rounded font-semibold">Evidence-Based</span>
+                <span class="bg-white/10 border border-wp-gold/50 px-4 py-2 rounded font-semibold">Military-Competent</span>
+            </div>
+
+            <div class="text-stone-400 text-sm">
+                <p>Avoneaux Medical Institute | DCPV360</p>
+                <p class="mt-1 opacity-60">CONFIDENTIAL</p>
+            </div>
+
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <a href="#slide-2" class="text-wp-gold/50 hover:text-wp-gold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">01 / 26</div>
+    </section>
+
+    <!-- SLIDE 2: THE TEAM -->
+    <section id="slide-2" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-sm font-semibold tracking-[0.2em]">THE TEAM</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Lived Experience + Expertise</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                <div class="bg-va-blue/30 backdrop-blur rounded-lg p-8 border-2 border-wp-gold/50">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 bg-wp-gold rounded-full flex items-center justify-center text-3xl font-bold text-wp-navy mr-4">J1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold">John Doe 1</h3>
+                            <p class="text-wp-gold">MD, PhD | Founder/CEO</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-stone-300">
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> 20+ years NIH Principal Investigator</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> USPHS Commissioned Officer (retired)</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> Medical device development</li>
+                        <li class="flex items-start"><span class="text-glory-red mr-2">&#9829;</span> <strong>40+ years personal recovery</strong></li>
+                    </ul>
+                </div>
+
+                <div class="bg-va-blue/30 backdrop-blur rounded-lg p-8 border-2 border-wp-gold/50">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 bg-glory-red rounded-full flex items-center justify-center text-3xl font-bold mr-4">J2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold">John Doe 2</h3>
+                            <p class="text-wp-gold">Technical Director</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-stone-300">
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> 25+ years immersive media expertise</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> 60+ VR deployments delivered</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span> DOD contractor experience</li>
+                        <li class="flex items-start"><span class="text-glory-red mr-2">&#9829;</span> <strong>30+ years personal recovery</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-block bg-wp-gold/10 backdrop-blur rounded-lg px-8 py-4 border border-wp-gold/50">
+                    <p class="text-xl font-semibold">Our Mission: <span class="text-wp-gold">Integrate science + medicine + peer recovery</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">02 / 26</div>
+    </section>
+
+    <!-- SLIDE 3: THE CRISIS -->
+    <section id="slide-3" class="slide bg-glory-red">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-white/80 text-sm font-semibold tracking-[0.2em]">THE CRISIS</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Military & Veterans Face a SUD Crisis</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+                <div class="stat-box bg-wp-navy/50 backdrop-blur rounded-lg p-6 text-center border border-wp-gold/30">
+                    <div class="text-4xl md:text-5xl font-bold text-wp-gold mb-2">2-3x</div>
+                    <div class="text-sm text-stone-200">Higher SUD rates than civilians</div>
+                </div>
+                <div class="stat-box bg-wp-navy/50 backdrop-blur rounded-lg p-6 text-center border border-wp-gold/30">
+                    <div class="text-4xl md:text-5xl font-bold text-wp-gold mb-2">30%</div>
+                    <div class="text-sm text-stone-200">Active duty report binge drinking</div>
+                </div>
+                <div class="stat-box bg-wp-navy/50 backdrop-blur rounded-lg p-6 text-center border border-wp-gold/30">
+                    <div class="text-4xl md:text-5xl font-bold text-wp-gold mb-2">10-15%</div>
+                    <div class="text-sm text-stone-200">Actually receive treatment</div>
+                </div>
+                <div class="stat-box bg-wp-navy/50 backdrop-blur rounded-lg p-6 text-center border border-wp-gold/30">
+                    <div class="text-4xl md:text-5xl font-bold text-wp-gold mb-2">$10-30K</div>
+                    <div class="text-sm text-stone-200">Traditional treatment per month</div>
+                </div>
+                <div class="stat-box bg-wp-navy/50 backdrop-blur rounded-lg p-6 text-center border border-wp-gold/30">
+                    <div class="text-4xl md:text-5xl font-bold text-wp-gold mb-2">60%</div>
+                    <div class="text-sm text-stone-200">Don't seek care due to stigma</div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-wp-navy/60 backdrop-blur rounded-lg p-8 border-2 border-wp-gold text-center">
+                    <div class="text-5xl md:text-6xl font-bold text-wp-gold mb-4">400,000+</div>
+                    <p class="text-xl text-stone-200">veterans currently have VA SUD diagnoses</p>
+                    <p class="text-stone-300 mt-2 italic">Countless more suffer in silence</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">03 / 26</div>
+    </section>
+
+    <!-- SLIDE 4: THE ACCESS PROBLEM -->
+    <section id="slide-4" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-sm font-semibold tracking-[0.2em]">THE PROBLEM</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Why Treatment Fails to Reach Those Who Need It</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="bg-va-blue/30 rounded-lg p-6 border-l-4 border-glory-red">
+                    <div class="w-12 h-12 bg-glory-red/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-glory-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Logistical Barriers</h3>
+                    <ul class="space-y-2 text-stone-300 text-sm">
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Rural locations (40+ miles to nearest VA SUD program)</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Deployment cycles / operational tempo</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Remote bases, ships, overseas installations</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Transportation, childcare, employment conflicts</li>
+                    </ul>
+                </div>
+
+                <div class="bg-va-blue/30 rounded-lg p-6 border-l-4 border-wp-gold">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Cultural Barriers</h3>
+                    <ul class="space-y-2 text-stone-300 text-sm">
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Military stigma ("weakness" to seek mental health care)</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Fear of career impact / security clearance issues</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Limited culturally competent providers</li>
+                    </ul>
+                </div>
+
+                <div class="bg-va-blue/30 rounded-lg p-6 border-l-4 border-wp-gold">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Financial Barriers</h3>
+                    <ul class="space-y-2 text-stone-300 text-sm">
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Long waitlists (30-90+ days at VA facilities)</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Limited TRICARE providers</li>
+                        <li class="flex items-start"><span class="text-wp-gold mr-2">&#9656;</span>Residential treatment costs prohibitive</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">04 / 26</div>
+    </section>
+
+    <!-- SLIDE 5: CURRENT SOLUTIONS FALL SHORT -->
+    <section id="slide-5" class="slide bg-va-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-sm font-semibold tracking-[0.2em]">THE GAP</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Current Solutions Fall Short</h2>
+                <p class="text-xl text-stone-400 mt-4">Traditional approaches don't fit military life</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-wp-navy/50 rounded-lg p-4 border border-glory-red/50 flex items-center">
+                    <span class="text-glory-red text-2xl mr-4">&#10007;</span>
+                    <div>
+                        <span class="font-bold text-wp-gold">Residential Treatment:</span>
+                        <span class="text-stone-300"> Removes service members from duty for 30-90 days</span>
+                    </div>
+                </div>
+                <div class="bg-wp-navy/50 rounded-lg p-4 border border-glory-red/50 flex items-center">
+                    <span class="text-glory-red text-2xl mr-4">&#10007;</span>
+                    <div>
+                        <span class="font-bold text-wp-gold">Outpatient Programs:</span>
+                        <span class="text-stone-300"> Require scheduled attendance (incompatible with ops tempo)</span>
+                    </div>
+                </div>
+                <div class="bg-wp-navy/50 rounded-lg p-4 border border-glory-red/50 flex items-center">
+                    <span class="text-glory-red text-2xl mr-4">&#10007;</span>
+                    <div>
+                        <span class="font-bold text-wp-gold">Teletherapy:</span>
+                        <span class="text-stone-300"> One-on-one only; expensive; limited provider availability</span>
+                    </div>
+                </div>
+                <div class="bg-wp-navy/50 rounded-lg p-4 border border-glory-red/50 flex items-center">
+                    <span class="text-glory-red text-2xl mr-4">&#10007;</span>
+                    <div>
+                        <span class="font-bold text-wp-gold">Self-Help Apps:</span>
+                        <span class="text-stone-300"> Not evidence-based; no human connection; poor retention</span>
+                    </div>
+                </div>
+                <div class="bg-wp-navy/50 rounded-lg p-4 border border-glory-red/50 flex items-center">
+                    <span class="text-glory-red text-2xl mr-4">&#10007;</span>
+                    <div>
+                        <span class="font-bold text-wp-gold">Consumer VR Platforms:</span>
+                        <span class="text-stone-300"> Data privacy concerns; expensive hardware; not trauma-informed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-block bg-wp-gold/10 border-2 border-wp-gold rounded-lg px-8 py-4">
+                    <p class="text-xl font-semibold text-stone-200">We need a solution designed <span class="text-wp-gold">FOR</span> military culture, not adapted from civilian healthcare.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">05 / 26</div>
+    </section>
+
+    <!-- SLIDE 6: OUR SOLUTION -->
+    <section id="slide-6" class="slide bg-wp-navy stars-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-sm font-semibold tracking-[0.2em]">OUR SOLUTION</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">VR Recovery Platform</h2>
+                <p class="text-xl text-stone-300 mt-4">Platform-Agnostic VR Rehabilitation</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-center">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 bg-va-blue/30 rounded-lg p-4 border border-wp-gold/30">
+                        <div class="w-10 h-10 bg-wp-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wp-gold">Works on ANY device</h3>
+                            <p class="text-stone-300 text-sm">Smartphones, tablets, computers, VR headsets</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 bg-va-blue/30 rounded-lg p-4 border border-wp-gold/30">
+                        <div class="w-10 h-10 bg-wp-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wp-gold">DOD/VA-compliant security</h3>
+                            <p class="text-stone-300 text-sm">HIPAA, FISMA, FedRAMP-certified infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 bg-va-blue/30 rounded-lg p-4 border border-wp-gold/30">
+                        <div class="w-10 h-10 bg-wp-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wp-gold">By veterans, for veterans</h3>
+                            <p class="text-stone-300 text-sm">Military-culturally appropriate content</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 bg-va-blue/30 rounded-lg p-4 border border-wp-gold/30">
+                        <div class="w-10 h-10 bg-wp-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wp-gold">Trauma-informed</h3>
+                            <p class="text-stone-300 text-sm">Designed with VA National Center for PTSD</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 bg-va-blue/30 rounded-lg p-4 border border-wp-gold/30">
+                        <div class="w-10 h-10 bg-wp-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-wp-gold">Hybrid approach</h3>
+                            <p class="text-stone-300 text-sm">VR education + live peer support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-wp-gold/10 rounded-lg p-8 border-2 border-wp-gold text-center">
+                    <div class="text-6xl font-bold text-wp-gold mb-2">$20-50</div>
+                    <div class="text-xl text-white mb-4">per user per month</div>
+                    <div class="border-t border-wp-gold/30 pt-4">
+                        <div class="text-stone-400 line-through">Traditional: $10,000+/month</div>
+                        <div class="text-3xl font-bold text-wp-gold mt-2">95% Cost Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">06 / 26</div>
+    </section>
+
+    <!-- SLIDE 7: WHY VR? THE SCIENCE -->
+    <section id="slide-7" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">THE SCIENCE</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Why VR?</h2>
+                <p class="text-xl text-stone-300 mt-4">Virtual Reality as a Medical Tool</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="space-y-4">
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Immersive experiences increase engagement and retention</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Safe environment for learning new skills</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Reduces anxiety around treatment (privacy + control)</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Proven effective for PTSD treatment (VA already uses VR)</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Cost-effective delivery of evidence-based interventions</span>
+                    </div>
+                </div>
+
+                <div class="bg-va-blue/30 rounded-lg p-6 border border-wp-gold/30">
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Research Evidence</h3>
+                    <ul class="space-y-3 text-stone-300">
+                        <li class="flex items-start">
+                            <span class="text-wp-gold mr-2">▸</span>
+                            VA's VR exposure therapy for PTSD (proven effective)
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-wp-gold mr-2">▸</span>
+                            Medical VR training (surgery, pain management)
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-wp-gold mr-2">▸</span>
+                            Early studies show VR improves SUD treatment outcomes
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-wp-gold/30">
+                        <p class="text-sm text-stone-300">Our approach: Leverage proven VR medical applications for addiction treatment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">07 / 26</div>
+    </section>
+
+    <!-- SLIDE 8: SECURITY FIRST -->
+    <section id="slide-8" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stone-400 text-lg font-medium tracking-wider">TECHNOLOGY</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Security First</h2>
+                <p class="text-xl text-stone-400 mt-4">DOD/VA-Compliant Technology Stack</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-va-blue/30 rounded-lg p-6 border border-wp-gold/30">
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Infrastructure</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-wp-gold/20">
+                            <span class="text-stone-400">Frontend</span>
+                            <span>WebXR standard (works on all devices)</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-wp-gold/20">
+                            <span class="text-stone-400">Backend</span>
+                            <span>Node.js on AWS GovCloud / Azure Gov</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-wp-gold/20">
+                            <span class="text-stone-400">Authentication</span>
+                            <span>CAC/PIV integration, VA OAuth</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-wp-gold/20">
+                            <span class="text-stone-400">Hosting</span>
+                            <span>FedRAMP Moderate certified cloud</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-stone-400">Compliance</span>
+                            <span>HIPAA, FISMA, Section 508</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-red-900/30 rounded-lg p-4 border border-red-500/30">
+                        <div class="flex items-center mb-2">
+                            <span class="text-red-500 text-xl mr-2">✗</span>
+                            <span class="font-bold text-red-300">NOT Meta Quest, NOT consumer VR</span>
+                        </div>
+                        <p class="text-sm text-stone-300">Commercial platforms harvest user data for advertising—incompatible with federal requirements</p>
+                    </div>
+                    <div class="bg-wp-gold/10 rounded-lg p-4 border border-wp-gold/30 flex items-center">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Zero third-party data collection</span>
+                    </div>
+                    <div class="bg-wp-gold/10 rounded-lg p-4 border border-wp-gold/30 flex items-center">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Government-grade security from day one</span>
+                    </div>
+                    <div class="bg-wp-gold/10 rounded-lg p-4 border border-wp-gold/30 flex items-center">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Patient data stays with VA/DOD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">08 / 26</div>
+    </section>
+
+    <!-- SLIDE 9: USER EXPERIENCE -->
+    <section id="slide-9" class="slide bg-va-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">USER EXPERIENCE</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">The Journey</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">1</div>
+                        <p class="text-sm">Access from any device</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">2</div>
+                        <p class="text-sm">Quick PTSD/TBI screening</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">3</div>
+                        <p class="text-sm">Choose immersion level</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">4</div>
+                        <p class="text-sm">Select content type</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-lg p-6 mb-8">
+                    <h3 class="font-bold mb-4 text-wp-gold">Content Options:</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+                        <div class="bg-wp-navy/50 rounded-lg p-3 text-center border border-wp-gold/20">Medical education</div>
+                        <div class="bg-wp-navy/50 rounded-lg p-3 text-center border border-wp-gold/20">Psychological skills</div>
+                        <div class="bg-wp-navy/50 rounded-lg p-3 text-center border border-wp-gold/20">Peer recovery</div>
+                        <div class="bg-wp-navy/50 rounded-lg p-3 text-center border border-wp-gold/20">Family support</div>
+                        <div class="bg-wp-navy/50 rounded-lg p-3 text-center">💼 Vocational</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">5</div>
+                        <p class="text-sm">Join group or 1-on-1</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">6</div>
+                        <p class="text-sm">Schedule follow-up</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">7</div>
+                        <p class="text-sm">Download for offline</p>
+                    </div>
+                    <div class="bg-wp-navy/50 rounded-lg p-4 text-center border border-wp-gold/30">
+                        <div class="w-10 h-10 mx-auto bg-wp-gold rounded-full flex items-center justify-center text-wp-navy font-bold mb-2">8</div>
+                        <p class="text-sm">Track progress</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <div class="inline-flex items-center space-x-4 bg-white/10 rounded-lg px-6 py-3">
+                        <span class="text-wp-gold font-semibold">⏱️ 15-30 min/session</span>
+                        <span class="text-white/30">|</span>
+                        <span class="text-wp-gold font-semibold">📅 Self-paced (2-4x/week)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">09 / 26</div>
+    </section>
+
+    <!-- SLIDE 10: PROGRAM CONTENT -->
+    <section id="slide-10" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">PROGRAM CONTENT</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Integration Philosophy</h2>
+                <p class="text-xl text-stone-300 mt-4">Don't choose between approaches—integrate ALL of them</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-va-blue/30 rounded-lg p-6 border border-wp-gold/30">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-3"><svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+                    <h3 class="text-lg font-bold text-wp-gold mb-3">Medical Science</h3>
+                    <p class="text-xs text-stone-300 mb-3">Provider-Led</p>
+                    <ul class="space-y-1 text-sm text-stone-300">
+                        <li>• Neuroscience of addiction</li>
+                        <li>• Medication-assisted treatment</li>
+                        <li>• Co-occurring disorders</li>
+                        <li>• Harm reduction</li>
+                    </ul>
+                </div>
+
+                <div class="bg-va-blue/30 rounded-lg p-6 border border-wp-gold/30">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-3"><svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+                    <h3 class="text-lg font-bold text-wp-gold mb-3">Psychological Skills</h3>
+                    <p class="text-xs text-stone-300 mb-3">Therapist-Led</p>
+                    <ul class="space-y-1 text-sm text-stone-300">
+                        <li>• CBT techniques</li>
+                        <li>• Mindfulness & meditation</li>
+                        <li>• Trauma awareness</li>
+                        <li>• Sleep hygiene</li>
+                    </ul>
+                </div>
+
+                <div class="bg-wp-gold/20 rounded-lg p-6 border border-wp-gold/30">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-3"><svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+                    <h3 class="text-lg font-bold text-wp-gold mb-3">Peer Recovery</h3>
+                    <p class="text-xs text-green-200 mb-3">Veteran-Led</p>
+                    <ul class="space-y-1 text-sm text-stone-300">
+                        <li>• Personal recovery stories</li>
+                        <li>• Practical sobriety tools</li>
+                        <li>• VA benefits navigation</li>
+                        <li>• Support network building</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-800/50 to-pink-900/50 rounded-lg p-6 border border-pink-500/30">
+                    <div class="w-12 h-12 bg-wp-gold/20 rounded-lg flex items-center justify-center mb-3"><svg class="w-6 h-6 text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+                    <h3 class="text-lg font-bold text-pink-300 mb-3">Family Healing</h3>
+                    <p class="text-xs text-pink-200 mb-3">Family Support</p>
+                    <ul class="space-y-1 text-sm text-pink-100">
+                        <li>• Spouse/children education</li>
+                        <li>• Communication skills</li>
+                        <li>• Military family resources</li>
+                        <li>• Rebuilding trust</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">10 / 26</div>
+    </section>
+
+    <!-- SLIDE 11: MILITARY CULTURAL COMPETENCE -->
+    <section id="slide-11" class="slide bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
+        <div class="absolute inset-0 opacity-5">
+            <div class="h-full w-full" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.1) 50px, rgba(255,255,255,0.1) 51px);"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-slate-400 text-lg font-medium tracking-wider">CULTURAL COMPETENCE</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Built By/For Military</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="space-y-4">
+                    <div class="bg-white/5 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold mr-3">✓</span>
+                        <span><strong>Content presenters:</strong> Veteran peer specialists, military medical professionals</span>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold mr-3">✓</span>
+                        <span><strong>Language:</strong> Rank-structure aware, operational context, military terminology</span>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold mr-3">✓</span>
+                        <span><strong>Scenarios:</strong> Deployment stress, combat trauma, transition, family separation</span>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold mr-3">✓</span>
+                        <span><strong>Branch-specific:</strong> Army, Navy, Marines, Air Force, Space Force, Coast Guard</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-600/30">
+                    <h3 class="font-bold mb-4 text-slate-300">Military-Specific Content Examples:</h3>
+                    <ul class="space-y-2 text-sm text-slate-200">
+                        <li>▸ "Post-deployment reintegration and substance use"</li>
+                        <li>▸ "Managing pain without opioids after combat injury"</li>
+                        <li>▸ "Staying sober on a submarine deployment"</li>
+                        <li>▸ "Supporting a spouse with PTSD and addiction"</li>
+                        <li>▸ "Transitioning to civilian recovery communities"</li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-slate-600/30">
+                        <p class="text-red-400 font-semibold text-sm">What we won't do: Generic civilian content with a flag slapped on it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">11 / 26</div>
+    </section>
+
+    <!-- SLIDE 12: TRAUMA-INFORMED DESIGN -->
+    <section id="slide-12" class="slide bg-glory-red">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">CRITICAL SAFETY</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Trauma-Informed Design</h2>
+                <p class="text-xl text-amber-200 mt-4">Addressing the #1 Concern: VR + PTSD/TBI</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-red-900/30 rounded-lg p-6 border border-red-500/30">
+                    <h3 class="font-bold mb-4 text-red-300">⚠️ The Problem</h3>
+                    <p class="text-red-100">VR can trigger dissociation or flashbacks in trauma survivors</p>
+
+                    <h3 class="font-bold mb-4 mt-6 text-wp-gold">✓ Our Solution</h3>
+                    <ul class="space-y-2 text-sm text-stone-300">
+                        <li>✓ Mandatory pre-screening (PCL-5 PTSD, TBI questionnaire)</li>
+                        <li>✓ Personalized VR vs. non-VR recommendations</li>
+                        <li>✓ Instant "escape" button to exit immersion</li>
+                        <li>✓ Adjustable intensity levels</li>
+                        <li>✓ Grounding techniques built-in</li>
+                        <li>✓ Real-time symptom monitoring</li>
+                        <li>✓ Automated crisis referrals</li>
+                        <li>✓ Veterans Crisis Line: 988 then press 1</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-wp-navy/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold mb-2 text-wp-gold">🤝 Development Partner</h3>
+                        <p class="text-stone-300">VA National Center for PTSD</p>
+                        <p class="text-sm text-stone-300 mt-2">(Ensuring best practices)</p>
+                    </div>
+
+                    <div class="bg-wp-gold/10 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold mb-2 text-wp-gold">🎯 Zero Tolerance Policy</h3>
+                        <p class="text-stone-300 text-sm">Any reported trauma trigger incident will result in immediate platform review and protocol adjustments.</p>
+                    </div>
+
+                    <div class="bg-white/10 rounded-lg p-6 border border-white/20 text-center">
+                        <p class="text-lg font-semibold">Non-VR alternatives available for ALL content</p>
+                        <p class="text-sm text-amber-200 mt-2">Nobody is forced into VR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">12 / 26</div>
+    </section>
+
+    <!-- SLIDE 13: HYBRID MODEL -->
+    <section id="slide-13" class="slide bg-gradient-to-br from-cyan-900 via-blue-900 to-cyan-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-cyan-300 text-lg font-medium tracking-wider">THE MODEL</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Technology + Human Connection</h2>
+                <p class="text-xl text-cyan-200 mt-4">It doesn't replace it—it enables it</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="bg-cyan-800/50 rounded-lg p-6 border border-cyan-500/30">
+                        <h3 class="font-bold mb-4 text-cyan-300">VR Education</h3>
+                        <p class="text-xs text-cyan-200 mb-4">Asynchronous</p>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Self-paced learning</li>
+                            <li>• Available 24/7</li>
+                            <li>• Foundational knowledge</li>
+                            <li>• Skill development</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">+</div>
+                        <div class="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full px-6 py-2 text-sm font-bold">
+                            INTEGRATED
+                        </div>
+                    </div>
+
+                    <div class="bg-va-blue/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold mb-4 text-wp-gold">Live Peer Support</h3>
+                        <p class="text-xs text-stone-300 mb-4">Synchronous</p>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Veteran peer specialists</li>
+                            <li>• Small group (5-8)</li>
+                            <li>• 1-on-1 mentorship</li>
+                            <li>• Family support groups</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white/10 rounded-lg p-8 text-center border border-white/20">
+                    <p class="text-xl font-semibold text-cyan-100">
+                        "Technology is the delivery mechanism.<br>
+                        <span class="text-white">Human connection is the healing mechanism.</span>"
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">13 / 26</div>
+    </section>
+
+    <!-- SLIDE 14: WHO WE SERVE -->
+    <section id="slide-14" class="slide bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-900 stars-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">TARGET POPULATIONS</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Who We Serve</h2>
+                <p class="text-xl text-stone-300 mt-4">Where we make the biggest impact</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">🏔️</span>
+                    Rural veterans (40+ miles from VA)
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">🏝️</span>
+                    Active duty on remote bases
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">🚢</span>
+                    Deployed service members
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">✈️</span>
+                    Post-deployment returnees
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">💜</span>
+                    Wounded warriors / WTUs
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">⚖️</span>
+                    Facing disciplinary action
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">🔐</span>
+                    Security clearance holders
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="block mb-2"><svg class="w-8 h-8 mx-auto text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                    Military families
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="block mb-2"><svg class="w-8 h-8 mx-auto text-wp-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span>
+                    Transitioning members
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">🏠</span>
+                    Homeless veterans
+                </div>
+                <div class="bg-white/10 rounded-lg p-4 text-center text-sm">
+                    <span class="text-2xl block mb-2">⛓️</span>
+                    Incarcerated veterans
+                </div>
+                <div class="bg-wp-gold/50 rounded-lg p-4 text-center text-sm border border-blue-400">
+                    <span class="text-2xl block mb-2">🎯</span>
+                    <strong>Those systems fail</strong>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">14 / 26</div>
+    </section>
+
+    <!-- SLIDE 15: ACTIVE DUTY SCENARIO -->
+    <section id="slide-15" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">USE CASE</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Active Duty Scenario</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-green-800/30 rounded-lg p-6 mb-6 border border-wp-gold/30">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-wp-gold rounded-full flex items-center justify-center mr-4"><svg class="w-8 h-8 text-wp-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+                        <div>
+                            <h3 class="text-xl font-bold">SGT Martinez</h3>
+                            <p class="text-wp-gold">Infantry, Fort Wainwright, Alaska</p>
+                        </div>
+                    </div>
+                    <p class="text-stone-300"><strong>Problem:</strong> Binge drinking escalating after deployment; nearest SUD program 100 miles away; fears career impact</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Day 1:</span> Commander recommends platform; downloads app
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Day 3:</span> PTSD screening; opts for non-VR mode
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Week 1:</span> Learns alcohol is "self-medicating" PTSD
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Week 2:</span> Joins peer support group; shares story
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Week 4:</span> Referred to military behavioral health
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-wp-gold font-bold">Month 3:</span> Alcohol use reduced 70%
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-600/30 rounded-lg p-4 text-center border border-green-500/50">
+                        <div class="text-2xl font-bold text-wp-gold">$50/month</div>
+                        <p class="text-sm text-stone-300">vs. $10,000+ residential</p>
+                    </div>
+                    <div class="bg-green-600/30 rounded-lg p-4 text-center border border-green-500/50">
+                        <div class="text-2xl font-bold text-wp-gold">$0 Career Impact</div>
+                        <p class="text-sm text-stone-300">Stays with unit, keeps clearance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">15 / 26</div>
+    </section>
+
+    <!-- SLIDE 16: VETERAN SCENARIO -->
+    <section id="slide-16" class="slide bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">USE CASE</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Veteran Scenario</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-indigo-800/30 rounded-lg p-6 mb-6 border border-wp-gold/30">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-2xl mr-4">🦅</div>
+                        <div>
+                            <h3 class="text-xl font-bold">John</h3>
+                            <p class="text-wp-gold">Marine veteran, age 32, rural Montana</p>
+                        </div>
+                    </div>
+                    <p class="text-stone-300"><strong>Problem:</strong> Opioid addiction from combat injury; VA SUD program 75 miles away; no car; two kids; wife works full-time</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Week 1:</span> VA provider recommends via telehealth
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Week 1:</span> Learns about MAT for opioid use disorder
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Week 2:</span> Watches peer recovery stories
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Week 3:</span> Joins live group with rural veterans
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Month 2:</span> Starts buprenorphine via VA telehealth
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-4 text-sm">
+                        <span class="text-indigo-400 font-bold">Month 6:</span> Stable; now leads peer discussions
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-indigo-600/30 rounded-lg p-4 text-center border border-indigo-500/50">
+                        <div class="text-2xl font-bold text-wp-gold">$40/month</div>
+                        <p class="text-sm text-stone-300">vs. $800+ outpatient (couldn't access anyway)</p>
+                    </div>
+                    <div class="bg-indigo-600/30 rounded-lg p-4 text-center border border-indigo-500/50">
+                        <div class="text-2xl font-bold text-wp-gold">0 Miles Traveled</div>
+                        <p class="text-sm text-stone-300">Family life stabilizes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">16 / 26</div>
+    </section>
+
+    <!-- SLIDE 17: MARKET OPPORTUNITY -->
+    <section id="slide-17" class="slide bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-emerald-300 text-lg font-medium tracking-wider">MARKET OPPORTUNITY</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Total Addressable Market</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4 mb-8">
+                    <div class="bg-emerald-800/50 rounded-lg p-4 flex justify-between items-center">
+                        <span>Veterans with VA SUD diagnoses</span>
+                        <span class="text-2xl font-bold text-emerald-300">400,000+</span>
+                    </div>
+                    <div class="bg-emerald-800/50 rounded-lg p-4 flex justify-between items-center">
+                        <span>Veterans with SUD not enrolled in VA</span>
+                        <span class="text-2xl font-bold text-emerald-300">1,000,000+</span>
+                    </div>
+                    <div class="bg-emerald-800/50 rounded-lg p-4 flex justify-between items-center">
+                        <span>Active duty (prevention + treatment)</span>
+                        <span class="text-2xl font-bold text-emerald-300">1,300,000+</span>
+                    </div>
+                    <div class="bg-emerald-800/50 rounded-lg p-4 flex justify-between items-center">
+                        <span>Military family members</span>
+                        <span class="text-2xl font-bold text-emerald-300">2,000,000+</span>
+                    </div>
+                    <div class="bg-white/20 rounded-lg p-4 flex justify-between items-center border-2 border-emerald-400">
+                        <span class="font-bold">TOTAL POTENTIAL USERS</span>
+                        <span class="text-3xl font-bold text-white">4,700,000+</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-emerald-900/50 rounded-lg p-4 text-center border border-emerald-500/30">
+                        <h4 class="font-bold text-emerald-300 mb-2">Years 1-3</h4>
+                        <p class="text-sm">3-5 VA medical centers</p>
+                        <p class="text-sm">2-3 DOD facilities</p>
+                        <p class="text-lg font-bold text-emerald-400 mt-2">5,000-10,000 users</p>
+                    </div>
+                    <div class="bg-emerald-900/50 rounded-lg p-4 text-center border border-emerald-500/30">
+                        <h4 class="font-bold text-emerald-300 mb-2">Years 4-7</h4>
+                        <p class="text-sm">National VA rollout</p>
+                        <p class="text-sm">DOD-wide deployment</p>
+                        <p class="text-lg font-bold text-emerald-400 mt-2">50,000-100,000 users</p>
+                    </div>
+                    <div class="bg-emerald-900/50 rounded-lg p-4 text-center border border-emerald-500/30">
+                        <h4 class="font-bold text-emerald-300 mb-2">Years 7+</h4>
+                        <p class="text-sm">State veterans services</p>
+                        <p class="text-sm">First responders expansion</p>
+                        <p class="text-lg font-bold text-emerald-400 mt-2">200,000+ users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">17 / 26</div>
+    </section>
+
+    <!-- SLIDE 18: BUSINESS MODEL -->
+    <section id="slide-18" class="slide bg-glory-red">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">BUSINESS MODEL</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">Sustainable & Mission-Driven</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Pricing (Per Active User/Month)</h3>
+                    <div class="space-y-3 mb-8">
+                        <div class="bg-wp-gold/20 rounded-lg p-4 flex justify-between">
+                            <span>VA/DOD enterprise contracts</span>
+                            <span class="font-bold text-wp-gold">$20-50</span>
+                        </div>
+                        <div class="bg-wp-gold/20 rounded-lg p-4 flex justify-between">
+                            <span>Direct-to-consumer (uninsured)</span>
+                            <span class="font-bold text-wp-gold">$10-20</span>
+                        </div>
+                        <div class="bg-wp-gold/20 rounded-lg p-4 flex justify-between">
+                            <span>Peer recovery content</span>
+                            <span class="font-bold text-wp-gold">FREE</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Revenue Streams</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>1. VA enterprise contracts (primary)</li>
+                        <li>2. DOD / TRICARE contracts (primary)</li>
+                        <li>3. State veteran services</li>
+                        <li>4. Commercial health plans</li>
+                        <li>5. Direct-to-consumer (secondary)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Cost Comparison</h3>
+                    <div class="space-y-3 mb-8">
+                        <div class="bg-green-900/50 rounded-lg p-4 border border-green-500/50">
+                            <div class="flex justify-between">
+                                <span>Our platform</span>
+                                <span class="font-bold text-wp-gold">$240-600/year</span>
+                            </div>
+                        </div>
+                        <div class="bg-red-900/30 rounded-lg p-4">
+                            <div class="flex justify-between">
+                                <span>Outpatient program</span>
+                                <span class="font-bold text-red-400">$9,600-24,000/year</span>
+                            </div>
+                        </div>
+                        <div class="bg-red-900/30 rounded-lg p-4">
+                            <div class="flex justify-between">
+                                <span>Residential treatment</span>
+                                <span class="font-bold text-red-400">$120,000-360,000/year</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 text-wp-gold">Projected Revenue</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between"><span>Year 1: 5,000 users</span><span class="font-bold">$1.8M</span></div>
+                        <div class="flex justify-between"><span>Year 3: 25,000 users</span><span class="font-bold">$9M</span></div>
+                        <div class="flex justify-between"><span>Year 5: 75,000 users</span><span class="font-bold">$27M</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">18 / 26</div>
+    </section>
+
+    <!-- SLIDE 19: COMPETITIVE LANDSCAPE -->
+    <section id="slide-19" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-stone-400 text-lg font-medium tracking-wider">COMPETITIVE LANDSCAPE</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">How We Compare</h2>
+            </div>
+
+            <div class="max-w-6xl mx-auto overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-left border-b border-wp-gold/20">
+                            <th class="p-3">Feature</th>
+                            <th class="p-3 text-center">Residential</th>
+                            <th class="p-3 text-center">Outpatient</th>
+                            <th class="p-3 text-center">Teletherapy</th>
+                            <th class="p-3 text-center">Consumer VR</th>
+                            <th class="p-3 text-center bg-wp-navy/50 text-wp-gold">Our Platform</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-stone-300">
+                        <tr class="border-b border-gray-800">
+                            <td class="p-3">Cost</td>
+                            <td class="p-3 text-center text-red-400">$10-30K/mo</td>
+                            <td class="p-3 text-center text-orange-400">$800-2K/mo</td>
+                            <td class="p-3 text-center text-yellow-400">$100-300/mo</td>
+                            <td class="p-3 text-center text-orange-400">$300-500 + sub</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">$20-50/mo</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-3">Access</td>
+                            <td class="p-3 text-center text-red-400">Limited</td>
+                            <td class="p-3 text-center text-red-400">Limited</td>
+                            <td class="p-3 text-center text-yellow-400">Moderate</td>
+                            <td class="p-3 text-center text-yellow-400">Good</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">Excellent</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-3">Military Competent</td>
+                            <td class="p-3 text-center text-red-400">Low</td>
+                            <td class="p-3 text-center text-yellow-400">Low-Mod</td>
+                            <td class="p-3 text-center text-red-400">Low</td>
+                            <td class="p-3 text-center text-red-400">None</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">High</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-3">DOD/VA Security</td>
+                            <td class="p-3 text-center text-wp-gold">Good</td>
+                            <td class="p-3 text-center text-wp-gold">Good</td>
+                            <td class="p-3 text-center text-yellow-400">Moderate</td>
+                            <td class="p-3 text-center text-red-400">Poor</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">Excellent</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-3">Trauma-Informed</td>
+                            <td class="p-3 text-center text-yellow-400">Moderate</td>
+                            <td class="p-3 text-center text-yellow-400">Moderate</td>
+                            <td class="p-3 text-center text-red-400">Low</td>
+                            <td class="p-3 text-center text-red-400">None</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">High</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3">Peer Support</td>
+                            <td class="p-3 text-center text-yellow-400">Moderate</td>
+                            <td class="p-3 text-center text-red-400">Low</td>
+                            <td class="p-3 text-center text-red-400">None</td>
+                            <td class="p-3 text-center text-red-400">None</td>
+                            <td class="p-3 text-center bg-wp-navy/30 text-wp-gold font-bold">High</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">19 / 26</div>
+    </section>
+
+    <!-- SLIDE 20: EVIDENCE PATHWAY -->
+    <section id="slide-20" class="slide bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">VALIDATION</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Clinical Evidence Pathway</h2>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-va-blue/30 rounded-lg p-6 border-2 border-blue-500">
+                        <div class="text-xs text-wp-gold mb-2">← WE ARE HERE</div>
+                        <h3 class="font-bold text-wp-gold mb-2">PHASE I</h3>
+                        <p class="text-sm text-stone-300 mb-2">Months 0-8</p>
+                        <p class="font-bold mb-3">Feasibility & Acceptability</p>
+                        <p class="text-xs text-stone-300 mb-2"><strong>Funding:</strong> SBIR Phase I ($250K)</p>
+                        <ul class="text-xs space-y-1 text-stone-300">
+                            <li>• Develop 2 VR educational modules</li>
+                            <li>• Internal testing with veteran advisors</li>
+                            <li>• Usability assessment</li>
+                            <li>• Trauma safety evaluation</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-800/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold text-wp-gold mb-2">PHASE II</h3>
+                        <p class="text-sm text-green-200 mb-2">Months 12-36</p>
+                        <p class="font-bold mb-3">Pilot RCT</p>
+                        <p class="text-xs text-stone-300 mb-2"><strong>Funding:</strong> SBIR II + NIH ($1.5-2M)</p>
+                        <ul class="text-xs space-y-1 text-stone-300">
+                            <li>• Partner with 3-5 VA/MTF sites</li>
+                            <li>• Randomized controlled trial (n=150-200)</li>
+                            <li>• Primary: Treatment engagement at 90 days</li>
+                            <li>• Peer-reviewed publication</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-800/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold text-wp-gold mb-2">PHASE III</h3>
+                        <p class="text-sm text-stone-300 mb-2">Months 36-72</p>
+                        <p class="font-bold mb-3">Multi-Site Effectiveness</p>
+                        <p class="text-xs text-stone-300 mb-2"><strong>Funding:</strong> VA HSR&D ($2-5M)</p>
+                        <ul class="text-xs space-y-1 text-stone-300">
+                            <li>• 10-15 VA + DOD sites</li>
+                            <li>• Implementation science approach</li>
+                            <li>• Real-world effectiveness</li>
+                            <li>• Cost-effectiveness analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white/10 rounded-lg p-4 text-center">
+                    <p class="text-sm"><strong>Publication Targets:</strong> JAMA Network Open • Journal of Substance Abuse Treatment • Military Medicine</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">20 / 26</div>
+    </section>
+
+    <!-- SLIDE 21: PARTNERSHIP APPROACH -->
+    <section id="slide-21" class="slide bg-gradient-to-br from-cyan-900 via-teal-900 to-cyan-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-cyan-300 text-lg font-medium tracking-wider">COLLABORATION</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">We Partner—Not "Sell"</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div>
+                    <h3 class="font-bold mb-4 text-cyan-300">Seeking Partnerships With:</h3>
+                    <div class="space-y-4">
+                        <div class="bg-cyan-800/50 rounded-lg p-4">
+                            <h4 class="font-bold text-cyan-200 mb-2">VA</h4>
+                            <ul class="text-sm space-y-1 text-cyan-100">
+                                <li>✓ Office of Connected Care</li>
+                                <li>✓ National Center for PTSD</li>
+                                <li>✓ VA medical centers (3-5 pilot sites)</li>
+                                <li>✓ Office of Mental Health & Suicide Prevention</li>
+                                <li>✓ Innovators Network</li>
+                            </ul>
+                        </div>
+                        <div class="bg-cyan-800/50 rounded-lg p-4">
+                            <h4 class="font-bold text-cyan-200 mb-2">DOD</h4>
+                            <ul class="text-sm space-y-1 text-cyan-100">
+                                <li>✓ Defense Health Agency (DHA)</li>
+                                <li>✓ Military Treatment Facilities (2-3 pilots)</li>
+                                <li>✓ Branch medical commands</li>
+                                <li>✓ Psychological Health Center of Excellence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-cyan-300">Collaboration Model:</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                            <span class="text-cyan-400 mr-3">✓</span>
+                            <span class="text-sm">Co-design with end users (veterans, service members, clinicians)</span>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                            <span class="text-cyan-400 mr-3">✓</span>
+                            <span class="text-sm">Integration with existing services (not replacement)</span>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                            <span class="text-cyan-400 mr-3">✓</span>
+                            <span class="text-sm">Data ownership: VA/DOD retains all patient data</span>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                            <span class="text-cyan-400 mr-3">✓</span>
+                            <span class="text-sm">Continuous feedback loops</span>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                            <span class="text-cyan-400 mr-3">✓</span>
+                            <span class="text-sm">Transparent reporting of outcomes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">21 / 26</div>
+    </section>
+
+    <!-- SLIDE 22: FUNDING STRATEGY -->
+    <section id="slide-22" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">FUNDING</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">Funding Roadmap & Ask</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="space-y-4">
+                    <div class="bg-green-800/30 rounded-lg p-4 border border-wp-gold/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Current Funding</h4>
+                        <p class="text-sm text-stone-300">Personal investment from founders ($50K+)</p>
+                        <p class="text-sm text-stone-300">Prototype development operational</p>
+                    </div>
+
+                    <div class="bg-blue-800/30 rounded-lg p-4 border border-wp-gold/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Phase I Target: $250-400K</h4>
+                        <ul class="text-sm text-stone-300 space-y-1">
+                            <li>• SBIR Phase I: $250K</li>
+                            <li>• VA Spark Seed: $50K</li>
+                            <li>• Virginia Innovation: $50-100K</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-800/30 rounded-lg p-4 border border-wp-gold/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Phase II Target: $1.5-2M</h4>
+                        <ul class="text-sm text-stone-300 space-y-1">
+                            <li>• SBIR Phase II: $1-1.5M</li>
+                            <li>• NIH/NIDA R01: $500K-1M/year</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-800/30 rounded-lg p-4 border border-amber-500/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Phase III Target: $2-5M</h4>
+                        <ul class="text-sm text-stone-300 space-y-1">
+                            <li>• VA HSR&D or QUERI: $2-5M</li>
+                            <li>• DOD contracts: $500K-1M</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 rounded-lg p-6 border-2 border-white/30">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Current Ask</h3>
+                    <div class="space-y-4">
+                        <div class="bg-red-600/30 rounded-lg p-4 border border-red-500/50">
+                            <span class="font-bold text-red-300">1.</span>
+                            <span class="ml-2">Letters of support for SBIR Phase I application</span>
+                        </div>
+                        <div class="bg-wp-gold/30 rounded-lg p-4 border border-blue-500/50">
+                            <span class="font-bold text-wp-gold">2.</span>
+                            <span class="ml-2">Pilot site commitments (3-5 VA/MTF)</span>
+                        </div>
+                        <div class="bg-green-600/30 rounded-lg p-4 border border-green-500/50">
+                            <span class="font-bold text-wp-gold">3.</span>
+                            <span class="ml-2">Introductions to VA Connected Care, DHA, PTSD Center</span>
+                        </div>
+                        <div class="bg-purple-600/30 rounded-lg p-4 border border-purple-500/50">
+                            <span class="font-bold text-wp-gold">4.</span>
+                            <span class="ml-2">Advisory board participation (4-6 advisors)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">22 / 26</div>
+    </section>
+
+    <!-- SLIDE 23: RISKS & MITIGATION -->
+    <section id="slide-23" class="slide bg-wp-navy">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-stone-400 text-lg font-medium tracking-wider">RISK MANAGEMENT</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">We've Thought Through the Risks</h2>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-amber-900/30 rounded-lg p-4 border border-amber-500/30">
+                        <h4 class="font-bold text-wp-gold mb-2">VR triggers PTSD/TBI</h4>
+                        <p class="text-xs text-stone-300">Mitigation: Trauma-informed design with VA PTSD Center; mandatory screening; non-VR alternatives; safety monitoring</p>
+                    </div>
+                    <div class="bg-amber-900/30 rounded-lg p-4 border border-amber-500/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Low veteran adoption</h4>
+                        <p class="text-xs text-stone-300">Mitigation: Co-design with veterans; peer specialist promotion; VA provider referrals; military cultural competence</p>
+                    </div>
+                    <div class="bg-amber-900/30 rounded-lg p-4 border border-amber-500/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Difficult VA partnerships</h4>
+                        <p class="text-xs text-stone-300">Mitigation: Start with individual champions; demonstrate quick wins; leverage VA innovation programs</p>
+                    </div>
+                    <div class="bg-amber-900/30 rounded-lg p-4 border border-amber-500/30">
+                        <h4 class="font-bold text-wp-gold mb-2">Technology barriers</h4>
+                        <p class="text-xs text-stone-300">Mitigation: Multi-device support; phone assistance; family training; simple interface</p>
+                    </div>
+                </div>
+
+                <div class="bg-wp-gold/10 rounded-lg p-6 border border-green-500/50 text-center">
+                    <h3 class="font-bold text-wp-gold mb-2">BIGGEST RISK WE'RE NOT TAKING:</h3>
+                    <p class="text-stone-300">Building on commercial VR platforms (Meta, etc.) that won't meet federal security requirements.</p>
+                    <p class="text-green-200 mt-2 font-semibold">We designed for compliance first, features second.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">23 / 26</div>
+    </section>
+
+    <!-- SLIDE 24: TIMELINE -->
+    <section id="slide-24" class="slide bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">ROADMAP</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">3-Year Path to Impact</h2>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="bg-va-blue/30 rounded-lg p-6 border-2 border-blue-500">
+                        <h3 class="font-bold text-wp-gold mb-2">YEAR 1</h3>
+                        <p class="text-xs text-stone-300 mb-3">Months 0-12</p>
+                        <ul class="text-xs space-y-2 text-stone-300">
+                            <li>✓ Secure SBIR Phase I</li>
+                            <li>✓ Develop 2 VR modules</li>
+                            <li>✓ Complete usability testing</li>
+                            <li>✓ Establish VA/DOD partnerships</li>
+                            <li>✓ Apply for Phase II</li>
+                        </ul>
+                        <div class="mt-4 pt-3 border-t border-wp-gold/30 text-xs font-bold text-wp-gold">
+                            Milestone: 3-5 pilot sites committed
+                        </div>
+                    </div>
+
+                    <div class="bg-green-800/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold text-wp-gold mb-2">YEAR 2</h3>
+                        <p class="text-xs text-green-200 mb-3">Months 12-24</p>
+                        <ul class="text-xs space-y-2 text-stone-300">
+                            <li>✓ Begin pilot deployment</li>
+                            <li>✓ Enroll 150-200 in RCT</li>
+                            <li>✓ Develop additional modules</li>
+                            <li>✓ Expand peer network</li>
+                            <li>✓ Build VA/DOD integrations</li>
+                        </ul>
+                        <div class="mt-4 pt-3 border-t border-wp-gold/30 text-xs font-bold text-wp-gold">
+                            Milestone: RCT enrollment complete
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-800/30 rounded-lg p-6 border border-wp-gold/30">
+                        <h3 class="font-bold text-wp-gold mb-2">YEAR 3</h3>
+                        <p class="text-xs text-stone-300 mb-3">Months 24-36</p>
+                        <ul class="text-xs space-y-2 text-stone-300">
+                            <li>✓ Complete RCT data</li>
+                            <li>✓ Analyze & publish results</li>
+                            <li>✓ Expand to 10-15 sites</li>
+                            <li>✓ Develop rollout toolkit</li>
+                            <li>✓ Engage VA/DOD contracts</li>
+                        </ul>
+                        <div class="mt-4 pt-3 border-t border-wp-gold/30 text-xs font-bold text-wp-gold">
+                            Milestone: 5,000+ veterans served
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-800/30 rounded-lg p-6 border border-amber-500/30">
+                        <h3 class="font-bold text-wp-gold mb-2">YEAR 4+</h3>
+                        <p class="text-xs text-amber-200 mb-3">Months 36+</p>
+                        <ul class="text-xs space-y-2 text-stone-300">
+                            <li>✓ National VA/DOD rollout</li>
+                            <li>✓ 50,000+ users</li>
+                            <li>✓ Self-sustaining revenue</li>
+                            <li>✓ Continuous development</li>
+                            <li>✓ First responder expansion</li>
+                        </ul>
+                        <div class="mt-4 pt-3 border-t border-amber-500/30 text-xs font-bold text-wp-gold">
+                            Milestone: National impact
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">24 / 26</div>
+    </section>
+
+    <!-- SLIDE 25: VISION -->
+    <section id="slide-25" class="slide bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 stars-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <span class="text-wp-gold text-lg font-medium tracking-wider">THE VISION</span>
+                <h2 class="text-5xl md:text-6xl font-bold mt-4">The Future We're Building</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-4 mb-8">
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Every service member and veteran can access SUD treatment—regardless of location, deployment, or stigma</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Addiction treatment as private and accessible as pulling out your smartphone</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>No veteran dies of overdose because they couldn't access care</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Families heal together through education and support</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Early intervention prevents careers from being destroyed</span>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 flex items-start">
+                        <span class="text-wp-gold text-xl mr-3">✓</span>
+                        <span>Peer support and medical science work hand-in-hand</span>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-block bg-gradient-to-r from-red-600 via-white to-blue-600 p-1 rounded-lg">
+                        <div class="bg-slate-900 rounded-lg px-8 py-6">
+                            <p class="text-2xl font-bold mb-4">THIS IS POSSIBLE.</p>
+                            <p class="text-stone-300">The technology exists. The evidence base exists. The need is urgent.</p>
+                            <p class="text-xl font-semibold text-white mt-4">What's missing: Partnership and commitment to make it real.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">25 / 26</div>
+    </section>
+
+    <!-- SLIDE 26: CALL TO ACTION -->
+    <section id="slide-26" class="slide bg-gradient-to-br from-red-900 via-blue-900 to-red-900">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-red-600 to-transparent"></div>
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-600 to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center space-x-4 mb-6">
+                    <span class="text-red-400 text-4xl">★</span>
+                    <span class="text-white text-4xl">★</span>
+                    <span class="text-wp-gold text-4xl">★</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold">Let's Partner to Save Lives</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+                        <h3 class="font-bold mb-4 text-lg">Immediate Next Steps:</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                                <span>Provide letter of support for SBIR Phase I</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-white text-wp-navy rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                                <span>Commit as pilot site for Phase II trial</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-wp-gold text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                                <span>Introduce us to key stakeholders</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                                <span>Join our advisory board</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 text-gray-900">
+                        <h3 class="font-bold mb-4 text-lg">Contact</h3>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p class="font-bold">John Doe 1, MD, PhD</p>
+                                <p class="text-gray-600">Founder/CEO</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Avoneaux Medical Institute</p>
+                                <p class="text-blue-600">www.avoneauxmed.org</p>
+                                <p class="text-gray-600">contact@avoneauxmed.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-xl font-semibold mb-6">
+                        Together, we can ensure those who served our nation<br>
+                        receive the care they deserve.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="mailto:contact@avoneauxmed.org" class="bg-white text-wp-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition">
+                            Email Us
+                        </a>
+                        <a href="founder-story.html" class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-500 transition">
+                            Our Story
+                        </a>
+                        <a href="faq.html" class="bg-wp-gold text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 transition">
+                            FAQ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number text-wp-gold/50">26 / 26</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Avoneaux Medical Institute / DCPV360. All rights reserved.</p>
+        <p class="mt-2">
+            <a href="index.html" class="hover:text-white transition">Home</a> |
+            <a href="founder-story.html" class="hover:text-white transition">Our Story</a> |
+            <a href="faq.html" class="hover:text-white transition">FAQ</a> |
+            <a href="cost-calculator.html" class="hover:text-white transition">Cost Calculator</a>
+        </p>
+    </footer>
+
+    <script>
+        // Highlight active nav dot
+        const slides = document.querySelectorAll('.slide');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navDots.forEach(dot => {
+                        dot.classList.remove('bg-white');
+                        dot.classList.add('bg-white/30');
+                        if (dot.getAttribute('href') === '#' + id) {
+                            dot.classList.remove('bg-white/30');
+                            dot.classList.add('bg-white');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        slides.forEach(slide => observer.observe(slide));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const currentSlide = [...slides].find(slide => {
+                const rect = slide.getBoundingClientRect();
+                return rect.top >= -100 && rect.top <= 100;
+            });
+
+            if (currentSlide) {
+                const currentIndex = [...slides].indexOf(currentSlide);
+
+                if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+                    e.preventDefault();
+                    if (currentIndex < slides.length - 1) {
+                        slides[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                    e.preventDefault();
+                    if (currentIndex > 0) {
+                        slides[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
