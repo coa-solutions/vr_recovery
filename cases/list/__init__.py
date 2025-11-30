@@ -4,7 +4,7 @@ VR Recovery Cases List Command
 List all VR recovery cases with their status and details.
 """
 
-from cli_framework.config import CommandMetadata
+from cli_framework import CommandMetadata
 
 # CLI metadata for command discovery
 CLI_METADATA = CommandMetadata(

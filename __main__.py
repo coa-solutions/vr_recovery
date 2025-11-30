@@ -6,7 +6,7 @@ VR Recovery case management CLI configuration using CLI_METADATA pattern.
 All logic is in cli_framework - this is just configuration.
 """
 
-from cli_framework.config import CLIAppConfig
+from cli_framework import CLIAppConfig, run_cli
 
 # CLI_METADATA: Configuration (not code!)
 CLI_METADATA = CLIAppConfig(
@@ -18,7 +18,7 @@ CLI_METADATA = CLIAppConfig(
 )
 
 # Use framework to handle all routing/help/arg parsing
-from cli_framework.runtime.app import run_cli
+
 
 
 def main():
