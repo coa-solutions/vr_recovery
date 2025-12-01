@@ -11,6 +11,7 @@ CLI_METADATA = CommandMetadata(
     path=['cases', 'list'],
     command='list',
     handler='main',
+    method=['read'],
     description='List all VR recovery cases'
 )
 
