@@ -1,6 +1,6 @@
-"""
-VR Recovery Cases List - Core Implementation
-"""
+"""List all VR recovery cases."""
+
+METHOD = 'read'
 
 from dataclasses import dataclass, field
 from typing import List
@@ -8,7 +8,7 @@ from typing import List
 
 @dataclass
 class CaseInfo:
-    """Individual case information"""
+    """Individual case information."""
     id: str
     status: str
     client: str
@@ -16,20 +16,14 @@ class CaseInfo:
 
 @dataclass
 class CasesListResult:
-    """Result model for cases list command"""
+    """Result model for cases list command."""
     success: bool
     count: int
     data: List[CaseInfo] = field(default_factory=list)
 
 
-def main() -> CasesListResult:
-    """
-    List all VR recovery cases.
-
-    Returns:
-        CasesListResult with case information
-    """
-    # Example implementation - replace with actual logic
+def respond() -> CasesListResult:
+    """List all VR recovery cases."""
     cases = [
         CaseInfo(id="VR-001", status="active", client="Sample Client 1"),
         CaseInfo(id="VR-002", status="pending", client="Sample Client 2"),

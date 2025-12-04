@@ -1,1 +1,1 @@
-{"cmd":"vr-recovery","desc":"VR Recovery case management interface","commands":[{"cmd":"cases list","method":["read"],"uses_anthropic":false}]}
+{"nerve": "vr_recovery", "desc": "VR Recovery case management interface.", "fibers": [{"fiber": "cases", "desc": "VR Recovery Cases Module"}]}

@@ -1,0 +1,5 @@
+org: coa-solutions
+type: nerve
+category: coa_health
+description: VR Recovery case management interface
+deps: _cns
